@@ -25,7 +25,7 @@ fetch_news_indian.py
 ⬇  
 raw_news_indian.json  
 ⬇  
-Fetch_Similar_News.py  <- publisher_cache.json
+Fetch_Similar_News.py  
 ⬇  
 Similar_Links_Output.json  
 ⬇  
@@ -33,7 +33,7 @@ classified_news.py
 ⬇  
 classified_news.json  
 ⬇  
-Lcr_classified.py  <- publisher_list.json
+Lcr_classified.py  
 ⬇  
 classified_results.json  
 
