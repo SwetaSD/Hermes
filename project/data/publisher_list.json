@@ -1,0 +1,802 @@
+[
+  {
+    "Domain": "deccanchronicle.com",
+    "Name": "Deccan Chronicle",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "timesnownews.com",
+    "Name": "Times Now News",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "thehansindia.com",
+    "Name": "The Hans India",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "thehindu.com",
+    "Name": "The Hindu",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "mypunepulse.com",
+    "Name": "Pune Pulse",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "msn.com",
+    "Name": "MSN",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "legal.economictimes.indiatimes.com",
+    "Name": "Economic Times Legal",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "global-agriculture.com",
+    "Name": "Global Agriculture",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "education.economictimes.indiatimes.com",
+    "Name": "Economic Times Education",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "tmv.in",
+    "Name": "The Morning Voice",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "metroindia.net",
+    "Name": "Metro India",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "medicalbuyer.co.in",
+    "Name": "Medical Buyer",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "timesofindia.indiatimes.com",
+    "Name": "The Times of India",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "bhaskarenglish.in",
+    "Name": "Bhaskar English",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "siasat.com",
+    "Name": "The Siasat Daily",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "latestly.com",
+    "Name": "Latestly",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "ndtv.com",
+    "Name": "NDTV",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "hyderabadmail.com",
+    "Name": "Hyderabad Mail",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "nbcnews.com",
+    "Name": "NBC News",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "dailypioneer.com",
+    "Name": "Daily Pioneer",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "afternoonvoice.com",
+    "Name": "Afternoon Voice",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "lokmattimes.com",
+    "Name": "Lokmat Times",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "indianexpress.com",
+    "Name": "The Indian Express",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "bollywoodshaadis.com",
+    "Name": "Bollywood Shaadis",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "devdiscourse.com",
+    "Name": "Devdiscourse",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "indiatoday.in",
+    "Name": "India Today",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "nytimes.com",
+    "Name": "New York Times",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "fivethirtyeight.com",
+    "Name": "FiveThirtyEight",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "pratidintime.com",
+    "Name": "Pratidin Time",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "deccanherald.com",
+    "Name": "Deccan Herald",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "english.mathrubhumi.com",
+    "Name": "Mathrubhumi English",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "m.economictimes.com",
+    "Name": "Economic Times Mobile",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "theweek.in",
+    "Name": "The Week",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "easterneye.biz",
+    "Name": "Eastern Eye",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "news18.com",
+    "Name": "News18",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "moneycontrol.com",
+    "Name": "Moneycontrol",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "news.com.au",
+    "Name": "News AU",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "wsj.com",
+    "Name": "Wall Street Journal",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "pib.gov.in",
+    "Name": "Press Information Bureau",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "barandbench.com",
+    "Name": "Bar and Bench",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "business-standard.com",
+    "Name": "Business Standard",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "firstpost.com",
+    "Name": "Firstpost",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "thederrick.com",
+    "Name": "The Derrick",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "ibtimes.co.in",
+    "Name": "IBTimes India",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "freepressjournal.in",
+    "Name": "Free Press Journal",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "wjla.com",
+    "Name": "WJLA",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "uz.kursiv.media",
+    "Name": "Kursiv Uzbekistan",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "facebook.com",
+    "Name": "Facebook",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "news.clearancejobs.com",
+    "Name": "ClearanceJobs News",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "indiatvnews.com",
+    "Name": "India TV News",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "manilatimes.net",
+    "Name": "Manila Times",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "intelligentcio.com",
+    "Name": "Intelligent CIO",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "us.headtopics.com",
+    "Name": "Head Topics US",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "telanganatoday.com",
+    "Name": "Telangana Today",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "republicworld.com",
+    "Name": "Republic World",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "hindustantimes.com",
+    "Name": "Hindustan Times",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "pbs.org",
+    "Name": "PBS News",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "punjabnewsexpress.com",
+    "Name": "Punjab News Express",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "thesouthfirst.com",
+    "Name": "The South First",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "bollywoodlife.com",
+    "Name": "Bollywood Life",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "livemint.com",
+    "Name": "Mint",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "news.getmyuni.com",
+    "Name": "GetMyUni News",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "news24online.com",
+    "Name": "News24",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "edition.cnn.com",
+    "Name": "CNN",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "punemirror.com",
+    "Name": "Pune Mirror",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "thestatesman.com",
+    "Name": "The Statesman",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "chromewebdata",
+    "Name": "Chrome Web Data",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "ottplay.com",
+    "Name": "Ottplay",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "hollywoodreporterindia.com",
+    "Name": "Hollywood Reporter India",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "indianstartuptimes.com",
+    "Name": "Indian Startup Times",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "gqindia.com",
+    "Name": "GQ India",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "usatoday.com",
+    "Name": "USA Today",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "careerpower.in",
+    "Name": "Career Power School",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "scroll.in",
+    "Name": "Scroll",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "educationtimes.com",
+    "Name": "Education Times",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "ianslive.in",
+    "Name": "IANS News",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "koimoi.com",
+    "Name": "Koimoi",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "economictimes.indiatimes.com",
+    "Name": "The Economic Times",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "seekingalpha.com",
+    "Name": "Seeking Alpha",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "proactiveinvestors.com",
+    "Name": "Proactive Investors",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "reuters.com",
+    "Name": "Reuters",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "socialmediatoday.com",
+    "Name": "Social Media Today",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "investors.com",
+    "Name": "Investor's Business Daily",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "techi.com",
+    "Name": "Techi",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "bollywoodhungama.com",
+    "Name": "Bollywood Hungama",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "dnaindia.com",
+    "Name": "DNA India",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "tripurachronicle.in",
+    "Name": "Tripura Chronicle",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "oneindia.com",
+    "Name": "OneIndia",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "madhyamamonline.com",
+    "Name": "Madhyamam",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "livescience.com",
+    "Name": "Live Science",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "bbc.co.uk",
+    "Name": "BBC Newsround",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "phys.org",
+    "Name": "Phys.org",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "straitstimes.com",
+    "Name": "The Straits Times",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "newsonair.gov.in",
+    "Name": "News On Air",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "theguardian.com",
+    "Name": "The Guardian",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "fortune.com",
+    "Name": "Fortune",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "bbc.com",
+    "Name": "BBC",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "hardwarezone.com.sg",
+    "Name": "HardwareZone Singapore",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "engadget.com",
+    "Name": "Engadget",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "lawtrend.in",
+    "Name": "Law Trend",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "shiksha.com",
+    "Name": "Shiksha",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "education.sakshi.com",
+    "Name": "Sakshi Education",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "thedailyjagran.com",
+    "Name": "Daily Jagran",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "jagranjosh.com",
+    "Name": "Jagran Josh",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "cbsnews.com",
+    "Name": "CBS News",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "freep.com",
+    "Name": "Detroit Free Press",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "india.com",
+    "Name": "India.com",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "sports.yahoo.com",
+    "Name": "Yahoo Sports",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "heavy.com",
+    "Name": "Heavy Sports",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "golfmonthly.com",
+    "Name": "Golf Monthly",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "pagesix.com",
+    "Name": "Page Six",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "usmagazine.com",
+    "Name": "US Weekly",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "golfmagic.com",
+    "Name": "Golf Magic",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "etvbharat.com",
+    "Name": "ETV Bharat News",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "sports.ndtv.com",
+    "Name": "NDTV Sports",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "in-cyprus.philenews.com",
+    "Name": "In Cyprus",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "m.thewire.in",
+    "Name": "The Wire",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "cnbctv18.com",
+    "Name": "CNBC TV18",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "forbesindia.com",
+    "Name": "Forbes India",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "swarajyamag.com",
+    "Name": "Swarajya",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "morningsun.net",
+    "Name": "Morning Sun",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "thelogicalindian.com",
+    "Name": "The Logical Indian",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "stg-hindustantimes.com",
+    "Name": "Hindustan Times",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "newindianexpress.com",
+    "Name": "The New Indian Express",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "indiatodayne.in",
+    "Name": "India Today NE",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "udaipurtimes.com",
+    "Name": "Udaipur Times",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "onmanorama.com",
+    "Name": "Onmanorama",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "millenniumpost.in",
+    "Name": "Millennium Post",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "news.ssbcrack.com",
+    "Name": "SSBCrack News",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "bwpoliceworld.com",
+    "Name": "BW Police World",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "outlookindia.com",
+    "Name": "Outlook India",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "odishatv.in",
+    "Name": "Odisha TV",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "aninews.in",
+    "Name": "ANI News",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "thenorthlines.com",
+    "Name": "Northlines",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "lawbeat.in",
+    "Name": "LawBeat",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "financialexpress.com",
+    "Name": "Financial Express",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "lawchakra.in",
+    "Name": "LawChakra",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "tribuneindia.com",
+    "Name": "The Tribune",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "organiser.org",
+    "Name": "Organiser",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "frontline.thehindu.com",
+    "Name": "Frontline",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "english.bombaysamachar.com",
+    "Name": "English Bombay Samachar",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "dynamitenews.com",
+    "Name": "Dynamite News",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "english.dainikjagranmpcg.com",
+    "Name": "Dainik Jagran English",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "newsarenaindia.com",
+    "Name": "News Arena India",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "telegraphindia.com",
+    "Name": "Telegraph India",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "pragativadi.com",
+    "Name": "Pragativadi",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "editorji.com",
+    "Name": "Editorji",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "thefederal.com",
+    "Name": "The Federal",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "boldnewsonline.com",
+    "Name": "Bold News",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "thenewsminute.com",
+    "Name": "The News Minute",
+    "Final Bias": "left"
+  },
+  {
+    "Domain": "zeenews.india.com",
+    "Name": "Zee News",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "indialegallive.com",
+    "Name": "India Legal",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "newskarnataka.com",
+    "Name": "News Karnataka",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "livelaw.in",
+    "Name": "Live Law",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "ndtvprofit.com",
+    "Name": "NDTV Profit",
+    "Final Bias": "right"
+  },
+  {
+    "Domain": "lawyerenews.com",
+    "Name": "Lawyer E News",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "bwlegalworld.com",
+    "Name": "BW Legal World",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "bignewsnetwork.com",
+    "Name": "Big News Network",
+    "Final Bias": "unbiased"
+  },
+  {
+    "Domain": "wionews.com",
+    "Name": "WION",
+    "Final Bias": "center"
+  },
+  {
+    "Domain": "news.abplive.com",
+    "Name": "ABP Live",
+    "Final Bias": "right"
+  }
+]
