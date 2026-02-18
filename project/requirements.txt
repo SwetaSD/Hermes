@@ -1,0 +1,10 @@
+flask
+spacy
+beautifulsoup4
+trafilatura
+feedparser
+requests
+sentence-transformers
+scikit-learn
+playwright
+lxml
