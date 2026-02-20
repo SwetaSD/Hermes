@@ -1,0 +1,766 @@
+C:\Taniya\Web Development\Hermes\project>python app.py
+🚀 Flask starting...
+▶ Running rss_sources_indian.py
+ * Serving Flask app 'app'
+ * Debug mode: off
+▶ Running fetch_news_indian.py
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+Fetched 674 articles
+
+▶ Running Fetch_Similar_News.py
+Processing: https://www.thehindu.com/news/national/telangana/woman-and-bike-taxi-rider-caught-for-snatching-gold-chain-in-jubilee-hills/article70652344.ece
+Saved
+Processing: https://www.thehindu.com/news/national/andhra-pradesh/state-has-2230-lakh-free-farm-power-connections-says-energy-minister-gottipati-ravi-kumar/article70651897.ece
+Saved
+Processing: https://www.thehindu.com/news/national/karnataka/mobile-bidi-pustaka-hidi-campaign-to-be-launched-in-karnataka-to-inculcate-reading-habit-among-schoolchildren/article70651554.ece
+Saved
+Processing: https://www.thehindu.com/news/national/tamil-nadu/nlcil-pays-dividend-of-360-crore-to-coal-ministry/article70650926.ece
+Saved
+Processing: https://www.thehindu.com/news/national/kerala/ahead-of-polls-kcm-scores-big-with-relaxation-on-school-appointments/article70652059.ece
+Saved
+Processing: https://www.thehindu.com/news/national/kerala/njeliyanparambas-legacy-waste-to-be-cleared-126-acres-to-be-recovered/article70652443.ece
+Saved
+Processing: https://indianexpress.com/article/sports/cricket/babar-azam-yousuf-khan-t20-world-cup-2026-10541349/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/a-lot-in-common-between-india-brazil-in-dealing-with-climate-crisis-10541348/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/rohit-shetty-firing-case-main-shooter-debt-arrested-10541350/
+Saved
+Processing: https://indianexpress.com/article/business/countries-ai-destiny-decentralise-deployment-open-source-mistral-ai-ceo-10541342/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/why-kader-khan-and-amitabh-bachchan-friendship-faded-if-amitabh-leaves-films-i-will-too-10541313/
+Saved
+Processing: https://indianexpress.com/article/cities/kolkata/fake-e-challan-scam-kolkata-police-cyber-cell-haryana-man-rs-5-43-lakh-fraud-10541328/
+Saved
+Processing: https://indianexpress.com/article/cities/chandigarh/haryana-punjab-dgps-contempt-failure-supreme-court-arrest-10541336/
+Saved
+Processing: https://indianexpress.com/article/cities/ahmedabad/gujarat-confidential-road-challenge-10541337/
+Saved
+Processing: https://indianexpress.com/article/lifestyle/health/the-liver-doc-recovery-cupping-therapy-hijama-risks-warning-10533157/
+Saved
+Processing: https://indianexpress.com/article/legal-news/kerala-hc-notice-kerala-story-2-cbfc-certificate-challenge-10541324/
+Saved
+Processing: https://indianexpress.com/article/cities/chandigarh/rdg-himachal-thakur-govt-diverting-attention-congress-bjp-10541325/
+Saved
+Processing: https://indianexpress.com/article/sports/cricket/he-was-bowling-at-130-131-kph-abhishek-nayar-on-shivam-dube-10541309/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/only-1-applicant-for-maharashtras-open-category-foreign-phd-scholarship-9-spots-vacant-10541300/
+Saved
+Processing: https://indianexpress.com/article/cities/chandigarh/mohali-atm-guard-held-throwing-chilli-powder-customers-looting-10541308/
+Saved
+Processing: https://indianexpress.com/article/cities/pune/pmc-repair-drainage-chambers-10541267/
+Saved
+Processing: https://indianexpress.com/article/cities/chandigarh/census-2027-house-listing-may-2026-chandigarh-charges-staff-deployed-10541312/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/the-kerala-story-2-kerala-hc-issues-notice-to-producers-amid-petition-challenging-its-censor-certificate-10541179/   
+Saved
+Processing: https://indianexpress.com/article/business/artificial-general-intelligence-on-the-horizon-within-5-years-google-deepmind-ceo-10541289/
+Saved
+Processing: https://indianexpress.com/article/world/us-news/trump-iran-conflict-indicators-us-military-buildup-strait-of-hormuz-oil-prices-10541221/
+Saved
+Processing: https://indianexpress.com/article/cities/delhi/faridabad-cyber-fraud-rbi-officials-10541292/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/lilavati-trust-pm-modi-funds-siphon-central-probe-10541273/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/all-the-records-ranveer-singhs-dhurandhar-broke-in-its-historic-75-day-box-office-run-10541094/
+Saved
+Processing: https://indianexpress.com/article/entertainment/television/aman-gupta-scolds-shark-tank-india-5-pitchers-ez-pac-rs-2-5-cr-investment-can-set-up-5-businesses-10540318/
+Saved
+Processing: https://indianexpress.com/article/cities/delhi/fugitive-member-of-banned-outfit-arrested-after-31-years-on-the-run-10541282/
+Saved
+Processing: https://indianexpress.com/article/sports/football/arsenal-mistake-manchester-city-premier-league-title-race-10541251/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/when-aishwarya-rai-was-asked-to-shoot-at-5-am-by-mani-ratnam-you-people-are-torturing-me-10540934/
+Saved
+Processing: https://indianexpress.com/article/sports/cricket/india-vs-pakistan-t20-world-cup-2026-colombo-yousuf-khan-10541261/
+Saved
+Processing: https://indianexpress.com/article/lifestyle/when-upasana-konidela-mom-learning-every-day-patience-parenthood-expert-10527984/
+Saved
+Processing: https://indianexpress.com/article/cities/delhi/noida-schools-bomb-threat-emails-cbse-exams-police-hoax-10541266/
+Saved
+Processing: https://indianexpress.com/article/cities/delhi/school-not-affiliated-to-cbse-chairperson-principal-among-4-booked-10541263/
+Saved
+Processing: https://indianexpress.com/article/india/tourist-sites-closed-pahalgam-open-may-2026-omar-abdullah-jk-10541252/
+Saved
+Processing: https://indianexpress.com/article/cities/ahmedabad/police-given-a-free-hand-to-deal-with-criminals-gujarat-deputy-cm-10541235/
+Saved
+Processing: https://indianexpress.com/article/cities/delhi/haryana-human-rights-body-police-state-govt-surajkund-mela-tragedy-10541250/
+Saved
+Processing: https://indianexpress.com/article/cities/chandigarh/hp-new-toll-tax-policy-12-seater-vehicles-pay-10541245/
+Saved
+Processing: https://indianexpress.com/article/sports/cricket/t20-world-cup-ind-vs-usa-abhishek-sharma-10541227/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/mumbai-suburban-rail-network-icf-rolls-out-first-15-car-emu-train-to-carry-7500-passengers-10541124/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/mumbai-climate-week-maharashtra-23-mous-urban-projects-10541233/
+Saved
+Processing: https://indianexpress.com/article/cities/ahmedabad/gujarat-confidential-jadejas-in-house-10541232/
+Saved
+Processing: https://indianexpress.com/article/entertainment/hollywood/peaky-blinders-the-immortal-man-trailer-shows-broken-thomas-shelby-returning-for-his-war-10541213/
+Saved
+Processing: https://indianexpress.com/article/technology/artificial-intelligence/perplexity-ai-removes-ads-user-trust-accuracy-revenue-strategy-10541146/
+Saved
+Processing: https://indianexpress.com/article/entertainment/telugu/devi-sri-prasad-beats-pawan-kalyan-signature-style-set-tone-for-second-single-from-ustaad-bhagat-singh-10541009/        
+Saved
+Processing: https://indianexpress.com/article/sports/chess/fabiano-caruana-candidates-2026-world-championship-magnus-carlsen-10541154/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/merger-ncp-claims-sharad-pawar-10541185/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/ravi-behl-interview-boogie-woogie-sabbatical-ott-personal-life-10540951/
+Saved
+Processing: https://indianexpress.com/article/technology/tech-news-technology/vivo-launches-v70-series-in-india-starting-at-%e2%82%b945999-10541188/
+Processing: https://indianexpress.com/article/technology/science/oldest-hominin-fossils-in-east-asia-found-to-be-nearly-1-8-million-years-old-10541183/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/maharashtra-rajya-sabha-seat-shiv-sena-ubt-stakes-claim-to-mva-10541187/
+Saved
+Processing: https://indianexpress.com/article/opinion/columns/c-raja-mohan-writes-modi-and-trump-in-different-ways-reshape-global-discourse-on-ai-10541184/
+Saved
+Processing: https://indianexpress.com/article/sports/cricket/brian-bennett-zim-vs-sl-t20-world-cup-2026-colombo-10541177/
+Saved
+Processing: https://indianexpress.com/article/upsc-current-affairs/upsc-essentials/upsc-essentials-daily-subject-wise-quiz-economy-week-150-10541172/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/priyanka-chopra-recalls-mother-madhu-chopra-grabbing-cab-driver-throat-she-slapped-him-10540785/
+Saved
+Processing: https://indianexpress.com/article/political-pulse/dmk-dmdk-alliance-rs-berth-revival-plan-vijayakanths-legacy-10541178/
+Saved
+Processing: https://indianexpress.com/article/cities/pune/flame-university-maps-indias-ever-changing-state-and-district-borders-10541176/
+Saved
+Processing: https://indianexpress.com/article/business/ex-softbank-president-arora-ai-speed-trust-inclusion-10541173/
+Saved
+Processing: https://indianexpress.com/article/lifestyle/life-style/shoulders-down-earlobes-out-body-language-cue-follow-confidence-expert-9745250/
+Saved
+Processing: https://indianexpress.com/article/cities/ahmedabad/no-tax-on-agricultural-electricity-in-gujarat-since-2004-finance-minister-10541168/
+Saved
+Processing: https://indianexpress.com/article/cities/chandigarh/land-mafia-hills-seasonal-stream-illegally-developed-plots-bjp-leader-10541170/
+Saved
+Processing: https://indianexpress.com/article/cities/delhi/gurgaon-hospital-raided-staff-arrested-facilitating-fake-insurance-claims-10541140/
+Saved
+Processing: https://indianexpress.com/article/sports/cricket/wasim-akram-t20-world-cup-2026-pommie-mbangwa-commentary-10541127/
+Saved
+Processing: https://indianexpress.com/article/cities/kolkata/bengal-polls-ahead-rebel-bjp-mla-from-hills-joins-tmc-says-didi-my-leader-now-10541158/
+Saved
+Processing: https://indianexpress.com/article/explained/bill-gates-pulls-out-india-ai-summit-reason-10541153/
+Saved
+Processing: https://indianexpress.com/article/india/gauhati-hc-assam-govt-families-evicted-hasila-beel-10541129/
+Saved
+Processing: https://indianexpress.com/article/world/karachi-gas-cylinder-explosion-soldier-bazaar-ramadan-deaths-building-collapse-10541132/
+Saved
+Processing: https://indianexpress.com/article/legal-news/rape-survivor-daughter-allowed-avoid-father-identity-school-records-10541131/
+Saved
+Processing: https://indianexpress.com/article/sports/cricket/zimbabwe-beat-sri-lanka-t20-world-cup-2026-undefeated-10541121/
+Saved
+Processing: https://indianexpress.com/article/business/sustained-availability-entry-level-jobs-ensured-accenture-ceo-julie-sweet-10541119/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/bjp-infighting-opens-door-congress-bhiwandi-mayoral-contest-10541118/
+Saved
+Processing: https://indianexpress.com/article/world/36-km-in-just-10-minutes-dubai-airport-to-palm-jumeirah-air-taxi-service-set-to-launch-in-2026-10540636/
+Saved
+Processing: https://indianexpress.com/article/legal-news/diamond-real-estate-businessman-vasant-gajera-brothers-arrested-hc-cheating-10541108/
+Saved
+Processing: https://indianexpress.com/article/cities/pune/secret-life-empress-botanical-garden-ready-to-be-narrated-10541098/
+Saved
+Processing: https://indianexpress.com/article/legal-news/why-punjab-and-haryana-high-court-said-not-for-judges-to-seek-transformation-of-human-nature-modified-mans-jail-term-10540989/    
+Saved
+Processing: https://indianexpress.com/article/lifestyle/fashion/hardik-pandya-jacob-co-watch-india-vs-pakistan-only-25-available-worldwide-10536787/
+Saved
+Processing: https://indianexpress.com/article/entertainment/television/akshay-kumar-calls-out-discrimination-against-northeast-indians-they-are-as-much-indians-as-i-am-10540929/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/mahalaxmi-central-park-proposal-under-fire-architects-10541083/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/despite-states-new-schemes-nursing-upgrades-vacant-posts-unsafe-hostels-stalled-hospitals-deepen-healthcare-shortages-10541063/
+Saved
+Processing: https://indianexpress.com/article/legal-news/kerala-high-court-orders-husband-to-return-73-sovereigns-of-gold-after-atm-records-expose-meagre-income-claims-10541021/
+Saved
+Processing: https://indianexpress.com/article/india/chandrababu-naidu-aggressive-blueprint-for-andhra-pradesh-10541084/
+Saved
+Processing: https://indianexpress.com/article/india/kota-man-threatens-shoot-rahul-gandhi-home-arrested-10541072/
+Saved
+Processing: https://indianexpress.com/article/upsc-current-affairs/upsc-essentials/upsc-mains-answer-practice-gs-1-week-142-10540855/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/veteran-filmmaker-mm-baig-found-dead-at-his-home-10541052/
+Saved
+Processing: https://indianexpress.com/article/cities/ahmedabad/research-park-to-come-up-at-l-d-college-of-engineering-in-ahmedabad-10541018/
+Saved
+Processing: https://indianexpress.com/article/cities/chandigarh/punjab-anti-narcotics-task-force-jalandhar-office-ai-anti-drug-drive-10541027/
+Saved
+Processing: https://indianexpress.com/article/technology/tech-news-technology/xiaomi-adds-new-75-inch-qled-x-pro-tv-to-its-lineup-of-premium-tvs-10540992/
+Saved
+Processing: https://indianexpress.com/article/legal-news/ncdrc-orders-vatika-limited-refund-interest-gurgaon-plot-possession-delay-10540937/
+Saved
+Processing: https://indianexpress.com/article/entertainment/television/anupam-mittal-best-shark-tank-india-investment-honest-home-company-revenue-430-percent-increase-rejected-him-10540375/
+Saved
+Processing: https://indianexpress.com/article/political-pulse/sensing-an-empty-space-why-dalit-centric-parties-are-making-a-beeline-to-up-for-2027-polls-10541042/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/vishal-bhardwaj-hits-back-at-detractors-of-oromeo-eveals-why-he-thanked-aamir-khan-10540862/
+Saved
+Processing: https://indianexpress.com/article/world/andrew-mountbatten-windsor-arrested-misconduct-public-office-epstein-case-explained-10540975/
+Saved
+Processing: https://indianexpress.com/article/entertainment/tamil/33-years-of-rajinikanths-yejaman-the-film-fans-initially-rejected-and-then-watched-for-175-days-10540835/
+Saved
+Processing: https://indianexpress.com/article/education/top-jobs-in-india-in-2026-and-how-much-do-they-pay-10540965/
+Saved
+Processing: https://indianexpress.com/article/cities/ahmedabad/11-neonatal-ambulances-gandhinagar-gujarat-govt-10541026/
+Saved
+Processing: https://indianexpress.com/article/business/india-talks-us-france-build-alternative-critical-minerals-supply-chain-10541014/
+Saved
+Processing: https://indianexpress.com/article/cities/bangalore/vijayapura-jewellery-robbers-arrested-10541003/
+Saved
+Processing: https://indianexpress.com/article/technology/tech-news-technology/adobe-creative-cloud-free-indian-students-10540962/
+Saved
+Processing: https://indianexpress.com/article/cities/pune/woman-kidnapped-in-love-fir-neighbours-mother-10540981/
+Saved
+Processing: https://indianexpress.com/article/cities/pune/shivjayanti-rush-massive-traffic-snarls-pune-mumbai-expressway-khandala-tunnel-10540969/
+Saved
+Processing: https://indianexpress.com/article/upsc-current-affairs/upsc-key-democratising-ai-cci-vs-whatsapp-and-sabarimala-ruling-10540783/
+Saved
+Processing: https://indianexpress.com/article/cities/chandigarh/mohali-atm-chilli-powder-customer-eyes-looting-10540994/
+Saved
+Processing: https://indianexpress.com/article/legal-news/rajasthan-high-court-slams-judge-over-blatant-discrepancies-in-pocso-bail-case-orders-inquiry-10540894/
+Saved
+Processing: https://indianexpress.com/article/lifestyle/pets-animals/when-licking-becomes-a-red-flag-vets-guide-to-canine-communication-10532147/
+Saved
+Processing: https://indianexpress.com/article/business/aviation/jeet-adani-ai-sovereignty-india-critical-infrastructure-10540979/
+Saved
+Processing: https://indianexpress.com/article/india/indian-railways-revises-schedule-of-firozpur-cantt-delhi-vande-bharat-express-train-10540900/
+Saved
+Processing: https://indianexpress.com/article/india/indians-sajad-lone-slams-police-verification-jk-residents-10540971/
+Saved
+Processing: https://indianexpress.com/article/india/anil-ambani-supreme-court-rs-40000-crore-fraud-probe-10540880/
+Saved
+Processing: https://indianexpress.com/article/education/today-news-headlines-for-school-assembly-february-20-2026-andrew-mountbatten-arrest-ind-vs-aus-women-t20-match-more-10540856/      
+Saved
+Processing: https://indianexpress.com/article/cities/bangalore/bengaluru-storeowner-kills-68-year-old-neighbour-pay-off-gambling-debts-arrested-10540897/
+Saved
+Processing: https://indianexpress.com/article/explained/explained-global/andrew-epstein-arrest-reason-uk-royals-10540928/
+Saved
+Processing: https://indianexpress.com/article/legal-news/supreme-court-may-5-hearing-petitions-challenging-caa-assam-tripura-10540949/
+Saved
+Processing: https://indianexpress.com/article/cities/kolkata/didi-is-now-my-leader-kurseong-bjp-mla-b-p-sharma-joins-tmc-attacks-saffron-party-for-doing-nothing-for-gorkhas-10540939/     
+Saved
+Processing: https://indianexpress.com/article/cities/bangalore/cops-expected-to-have-good-relationship-with-public-karnataka-hc-upholds-compulsory-retirement-of-constable-who-assaulted-shop-owner-10540936/
+Saved
+Processing: https://indianexpress.com/article/education/about-13000-teaching-posts-vacant-in-jk-no-schools-upgrade-since-2024-sakeena-itoo-10540938/
+Saved
+Processing: https://indianexpress.com/article/technology/tech-news-technology/jiohotstar-partners-with-openai-now-use-chatgpt-to-find-your-next-favourite-movie-webseries-10540933/        
+Saved
+Processing: https://indianexpress.com/article/opinion/columns/ai-should-be-global-commons-pm-modis-manav-can-lead-the-way-10540932/
+Saved
+Processing: https://indianexpress.com/article/education/odisha-board-exams-2026-class-10th-examination-begins-for-more-than-5-61-lakh-students-10540923/
+Saved
+Processing: https://indianexpress.com/article/cities/ahmedabad/kheda-school-teacher-booked-for-sexually-assaulting-teen-student-10540899/
+Saved
+Processing: https://indianexpress.com/article/world/andrew-mountbatten-windsor-arrested-live-updates-10540805/
+Saved
+Processing: https://indianexpress.com/article/sports/cricket/india-t20-world-cup-off-spin-vulnerability-martin-crowe-strategy-10540870/
+Saved
+Processing: https://indianexpress.com/article/education/uk-higher-education-sees-first-dip-in-academic-staff-numbers-in-a-decade-hesa-data-10540820/
+Saved
+Processing: https://indianexpress.com/article/trending/trending-in-india/mumbai-woman-reveals-rs-1-11-lakh-monthly-rent-for-bandra-2-bhk-video-goes-viral-10540879/
+Saved
+Processing: https://indianexpress.com/article/legal-news/sc-questions-freebies-states-running-deficits-10540872/
+Saved
+Processing: https://indianexpress.com/article/news-today/up-govt-launches-natural-farming-drive-across-bundelkhand-districts-10540844/
+Saved
+Processing: https://indianexpress.com/article/legal-news/madras-high-court-pfi-associates-property-attachment-arivagam-uapa-10540829/
+Saved
+Processing: https://indianexpress.com/article/education/free-ai-tools-from-adobe-india-ai-impact-summit-content-creator-labs-10540738/
+Saved
+Processing: https://indianexpress.com/article/india/irctc-tightens-rules-aadhaar-verification-must-for-advance-and-tatkal-bookings-10540786/
+Saved
+Processing: https://indianexpress.com/article/lifestyle/food-wine/ashwini-kalsekar-non-vegetarian-food-love-murli-sharma-pure-vegetarian-no-garlic-mushroom-restarting-expert-10522755/    
+Saved
+Processing: https://indianexpress.com/article/upsc-current-affairs/upsc-essentials/upsc-prelims-2026-revision-polity-office-of-speaker-chairman-om-birla-10540471/
+Saved
+Processing: https://indianexpress.com/article/opinion/columns/the-delhi-that-ai-summits-vips-wont-see-and-the-one-they-did-10540864/
+Saved
+Processing: https://indianexpress.com/article/cities/delhi/aiims-indo-french-collab-to-use-ai-neuro-disorders-research-10540833/
+Saved
+Processing: https://indianexpress.com/article/sports/cricket/pakistan-shadab-khan-mike-hesson-india-t20-world-cup-10540832/
+Saved
+Processing: https://indianexpress.com/article/political-pulse/up-mission-2027-mohan-bhagwat-meetings-yogi-maurya-10540713/
+Saved
+Processing: https://indianexpress.com/article/education/cbse-board-english-exam-class-10-important-chapters-grammer-focus-areas-10540776/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/rajpal-yadavs-dance-at-nieces-wedding-after-release-from-tihar-jail-is-unmissable-watch-video-10540722/
+Saved
+Processing: https://indianexpress.com/article/cities/pune/national-t20-cricket-blind-cricketers-turn-pune-grounds-into-arenas-of-endurance-determination-10540809/
+Saved
+Processing: https://indianexpress.com/article/technology/gadgets/apple-wearables-pendant-airpods-smart-glasses-10540504/
+Saved
+Processing: https://indianexpress.com/article/explained/explained-economics/explainspeaking-budget-priorities-economy-needs-10540744/
+Saved
+Processing: https://indianexpress.com/article/legal-news/karnataka-high-court-couple-abandoned-baby-10540806/
+Saved
+Processing: https://indianexpress.com/article/sports/cricket/west-indies-italy-t20-world-cup-shai-hope-record-group-stage-10540705/
+Saved
+Processing: https://indianexpress.com/article/trending/trending-globally/luxury-brand-launches-burnt-white-shirts-for-over-rs-1-lakh-sparks-backlash-10540780/
+Saved
+Processing: https://indianexpress.com/article/research/meet-capital-the-forgotten-kolkata-newspaper-that-invented-business-journalism-in-india-10540778/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/priyanka-chopra-admits-she-doesnt-feel-she-has-arrived-in-hollywood-10540663/
+Saved
+Processing: https://indianexpress.com/article/legal-news/orissa-high-court-osfc-loan-recovery-richard-brinsley-sheridan-quote-10540653/
+Saved
+Processing: https://indianexpress.com/article/entertainment/television/sidharth-shukla-used-to-abuse-rashami-desai-and-jasmin-bhasin-on-set-claims-vaishnavi-macdonald-10540707/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/india-childhood-cancer-registry-high-survival-late-effect-risks-10540751/
+Saved
+Processing: https://indianexpress.com/article/cities/chandigarh/10-arrested-in-mohali-phase-11-murder-case-6-accused-still-absconding-10540755/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/mumbai-court-south-african-hairdresser-heroine-case-10540742/
+Saved
+Processing: https://indianexpress.com/article/health-wellness/rana-daggubati-post-kidney-transplant-challenges-doctor-normal-work-life-10540609/
+Saved
+Processing: https://indianexpress.com/article/lifestyle/destination-of-the-week/kerala-travelogue-varkala-fort-kochi-female-safety-hyper-vigilance-10514920/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/bandra-comic-book-store-nerd-culture-10540749/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/127-million-passengers-travelled-on-mumbai-suburban-trains-in-jan-2026-central-railway-10540234/
+Saved
+Processing: https://indianexpress.com/article/cities/chandigarh/email-threat-blast-timings-punjab-secretariat-chandigarh-district-court-suspicious-searches-10540723/
+Saved
+Processing: https://indianexpress.com/article/technology/artificial-intelligence/jimmy-wales-wikipedia-ai-knowledge-is-human-10540648/
+Saved
+Processing: https://indianexpress.com/article/cities/hyderabad/largest-integrated-lithium-ion-battery-gigafactory-andhra-pradesh-10540708/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/kerala-cm-slams-the-kerala-story-2-trailer-calls-it-an-attempt-to-demonise-our-secular-fabric-10540670/
+Saved
+Processing: https://indianexpress.com/article/education/cbse-class-10-12-board-2026-exams-advisory-against-fake-news-rumours-cbse-gov-in-10540710/
+Saved
+Processing: https://indianexpress.com/article/world/epstein-files-row-uk-police-arrest-king-charles-brother-andrew-on-suspicion-of-misconduct-in-public-%e2%81%a0office-10540734/
+Processing: https://indianexpress.com/article/opinion/columns/jk-enters-first-ever-paras-dogra-aquib-nabi-ranji-trophy-final-jammu-kashmir-conflict-cricket-10540695/
+Saved
+Processing: https://indianexpress.com/article/cities/bangalore/axe-attack-at-karantaka-mass-wedding-pregnant-woman-targeted-by-brother-for-inter-caste-marriage-in-koppal-10540677/        
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/neena-gupta-recalls-harassment-by-director-regrets-speaking-about-it-publicly-10540469/
+Saved
+Processing: https://indianexpress.com/article/india/terrorists-mountain-dense-forest-security-review-jammu-and-kashmir-10540674/
+Saved
+Processing: https://indianexpress.com/article/cities/pune/maharashtra-hsc-exams-39-examination-staff-suspended-in-mass-copying-cases-10540679/
+Saved
+Processing: https://indianexpress.com/article/cities/chandigarh/fire-ludhiana-house-68-year-old-man-dead-10540680/
+Saved
+Processing: https://indianexpress.com/article/explained/explained-law/cheque-bounce-complainants-acquittals-without-court-nod-10540629/
+Saved
+Processing: https://indianexpress.com/article/cities/kolkata/kolkata-folding-bascule-bridge-makeover-10540665/
+Saved
+Processing: https://indianexpress.com/article/political-pulse/decode-politics-why-did-kerala-hc-halt-vijayan-governments-nava-keralam-programme-10540657/
+Saved
+Processing: https://indianexpress.com/article/technology/opinion-technology/this-rs-1600-apple-pencil-alternative-works-with-any-smartphone-or-tablet-even-my-decade-old-ipad-air-10540611/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/bhiwandi-mayoral-contest-bjp-infighting-opens-door-for-congress-10540606/
+Saved
+Processing: https://indianexpress.com/article/legal-news/mp-high-court-fines-officials-wrong-forum-appeal-wildlife-act-10540568/
+Saved
+Processing: https://indianexpress.com/article/explained/explained-sci-tech/ai-summit-awkward-hands-altman-amodei-10540594/
+Saved
+Processing: https://indianexpress.com/article/lifestyle/health/shweta-tiwari-hygiene-pouch-for-women-10526774/
+Saved
+Processing: https://indianexpress.com/article/business/ril-jio-rs-10-lakh-crore-ai-mukesh-ambani-10540617/
+Saved
+Processing: https://indianexpress.com/article/india/railways-revises-schedule-43rd-vande-bharat-train-route-travel-stops-timings-fare-10540555/
+Saved
+Processing: https://indianexpress.com/article/health-wellness/my-patient-stopped-carbs-completely-after-his-diabetes-diagnosis-what-happened-next-surprised-him-10540613/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/mumbai-police-decoy-operation-fake-lawrence-bishnoi-gang-extortionists-10540592/
+Saved
+Processing: https://indianexpress.com/article/explained/bihar-ban-open-sale-of-meat-challenges-10540602/
+Saved
+Processing: https://indianexpress.com/article/legal-news/unprecedented-and-shocking-ed-tells-supreme-court-how-mamata-banerjee-hijacked-i-pac-search-to-vanish-evidence-10540477/
+Saved
+Processing: https://indianexpress.com/article/upsc-current-affairs/upsc-essentials/knowledge-nugget-naneghat-western-ghats-caves-architecture-10540473/
+Saved
+Processing: https://indianexpress.com/article/cities/ahmedabad/chaos-in-vadodara-amid-civic-budget-discussion-7-cong-corporators-suspended-10540596/
+Saved
+Processing: https://indianexpress.com/article/cities/chandigarh/recognition-abroad-silence-home-why-world-marking-saka-nakodar-day-punjab-files-go-missing-10540586/
+Saved
+Processing: https://indianexpress.com/article/legal-news/born-into-bodies-not-aligned-with-identity-allahabad-high-court-slams-passport-office-for-violating-transgender-rights-act-10540532/
+Saved
+Processing: https://indianexpress.com/article/business/pm-modi-ai-summit-delhi-openness-10540552/
+Saved
+Processing: https://indianexpress.com/article/cities/bangalore/80-year-old-amputee-charred-to-death-bengaluru-house-fire-10540522/
+Saved
+Processing: https://indianexpress.com/article/cities/delhi/traffic-mess-during-ai-summit-why-delhi-police-have-their-task-cut-out-10540557/
+Saved
+Processing: https://indianexpress.com/article/cities/delhi/nbdsa-guidelines-for-social-media-content-fines-zee-news-rs-1-lakh-10540554/
+Saved
+Processing: https://indianexpress.com/article/sports/cricket/sri-lanka-vs-zimbabwe-live-cricket-score-updates-t20-world-cup-2026-sl-zim-match-38-group-b-scorecard-10540503/
+Saved
+Processing: https://indianexpress.com/article/legal-news/supreme-court-pendency-grew-despite-record-disposal-2025-10540543/
+Saved
+Processing: https://indianexpress.com/article/india/rishikesh-karnaprayag-rail-project-completed-by-december-2028-says-rvnl-cmd-10535283/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/mumbai-coastal-road-project-bmc-to-appoint-vjti-to-survey-ongoing-digging-work-for-second-phase-10540523/
+Saved
+Processing: https://indianexpress.com/article/cities/mumbai/indias-only-two-spacefarers-share-a-call-from-orbit-and-a-stark-climate-warning-10540516/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/nick-jonas-sports-mangalsutra-promotes-priyanka-chopra-the-bluff-fans-jiju-a-green-forest-watch-10540419/
+Saved
+Processing: https://indianexpress.com/article/political-pulse/bhupen-borah-exit-from-congress-interview-10540509/
+Saved
+Processing: https://indianexpress.com/article/legal-news/sonam-wangchuk-hearing-news-live-updates-supreme-court-to-continue-hearing-plea-10540361/
+Saved
+Processing: https://indianexpress.com/article/trending/trending-in-india/ttendees-forced-to-walk-6-km-as-vip-movement-paralyses-india-ai-impact-summit-10540505/
+Saved
+Processing: https://indianexpress.com/article/legal-news/why-delhi-high-court-wants-more-judges-to-handle-organised-crime-cases-immediately-10540387/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/hardik-pandya-wishes-his-princess-mahieka-sharma-on-her-25th-birthday-shares-romantic-post-10540210/
+Saved
+Processing: https://indianexpress.com/article/entertainment/bollywood/neeraj-pandey-drops-manoj-bajpayee-starrers-ghooskhor-pandat-title-supreme-court-closes-plea-10540420/
+Saved
+Processing: https://indianexpress.com/article/legal-news/witnesses-untraced-ncb-officer-brazilian-accused-of-carrying-4-kg-cocaine-10540474/
+Saved
+Processing: https://indianexpress.com/article/cities/pune/too-bright-to-be-safe-unregulated-aftermarket-headlights-are-turning-punes-roads-into-a-safety-hazard-10540459/
+Saved
+Processing: https://indianexpress.com/article/legal-news/dispute-essentially-pertains-to-a-commercial-transaction-supreme-court-grants-bail-to-vikram-bhatt-wife-in-cheating-case-orders-mediation-10540430/
+Saved
+Processing: https://indianexpress.com/article/legal-news/orissa-high-court-cpse-2024-paper-leak-cbi-bail-dismissed-10540418/
+Saved
+Processing: https://indianexpress.com/article/books-and-literature/ankur-warikoo-winning-people-without-losing-yourself-epic-book-review-10540323/
+Saved
+Processing: https://timesofindia.indiatimes.com/world/us/will-know-in-10-days-trump-warns-of-bad-things-if-iran-doesnt-make-meaningful-deal/articleshow/128565505.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/world/middle-east/saudi-arabia-vs-uae-inside-the-rift-shaking-the-gulf/articleshow/128546705.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/india/from-remark-to-retreat-why-shivaji-maharajtipu-sultan-comparison-sparked-row-explained/articleshow/128562180.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/india/makes-your-country-stronger-french-president-emmanuel-macron-criticism-over-rafale-deal-in-india/articleshow/128559401.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/sports/cricket/icc-mens-t20-world-cup/we-keep-our-sights-forward-giant-killer-zimbabwe-send-warning-after-taking-down-sri-lanka-and-australia/articleshow/128566071.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/technology/tech-news/google-ceo-sundar-pichai-urges-tech-companies-to-work-together-the-best-outcomes-of-ai-are-not-guaranteed-but/articleshow/128563456.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/india/nikhil-gupta-pannun-murder-plot-and-the-nijjar-connection-inside-a-case-that-spanned-3-continents/articleshow/128551812.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/sports/cricket/icc-mens-t20-world-cup/more-lethal-than-jasprit-bumrah-ex-india-captain-makes-big-claim-on-varun-chakravarthy/articleshow/128558506.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/world/us/nothing-like-money-donald-trump-claims-200-tariffs-warning-forced-india-pakistan-to-stop-fighting/articleshow/128565480.cms       
+Saved
+Processing: https://timesofindia.indiatimes.com/technology/tech-news/openclaws-peter-steinberger-on-why-he-rejected-mark-zuckerbergs-job-offer-and-took-sam-altmans-with-relatively-less-money-says-/articleshow/128563703.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/veteran-filmmaker-m-m-baig-found-dead-at-home-neighbours-alerted-police-after-foul-smell-says-publicist-hanif-zaveri/articleshow/128566456.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/world/us/will-us-attack-iran-this-weekend-what-prediction-market-is-betting-on/articleshow/128557425.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/world/uk/ex-prince-andrew-arrested-what-recent-files-revealed-about-his-ties-with-epstein/articleshow/128555613.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/technology/social/uk-pm-keir-starmer-gives-twitter-meta-tiktok-and-other-social-media-companies-a-48-hour-deadline-to-/articleshow/128468605.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/india/ajit-pawar-plane-crash-aviation-ministry-to-release-preliminary-report-in-30-days/articleshow/128564279.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/sports/nfl/news/too-much-like-a-coincidence-will-taylor-swift-bring-fianc-travis-kelce-and-run-into-her-140-million-rich-ex-at-the-2026-brit-awards/articleshow/128566152.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/science/nasa-studies-antarctic-seawater-to-support-search-for-life-beyond-earth/articleshow/128559052.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/sports/nba/top-stories/nba-trade-news-golden-state-warriors-sign-60-million-boston-celtics-big-man-instead-of-the-much-coveted-giannis-chase-assessing-the-pros-and-cons/articleshow/128484999.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/sports/nfl/news/if-tom-brady-doesnt-hook-up-with-just-anyone-does-that-make-his-not-that-serious-alix-earle-fling-actually-something-more/articleshow/128560217.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/sports/nba/top-stories/lakers-legend-magic-johnson-sends-heartfelt-birthday-message-to-michael-jordan-amid-controversy/articleshow/128487424.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/india/indian-visas-in-bangladesh-likely-to-be-fully-restored-soon-as-tarique-rahman-takes-charge/articleshow/128560481.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/life-style/soul-search/quote-of-the-day-by-marcus-aurelius-time-is-a-sort-of-river-of-passing-events-and-strong-is-its-current-no-sooner-is-a/articleshow/128548915.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/sports/cricket/news/bengalurus-chinnaswamy-stadium-not-to-host-ranji-trophy-final-title-clash-heads-to-hubballi-heres-why/articleshow/128563974.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/sports/cricket/icc-mens-t20-world-cup/sikandar-roars-in-colombo-zimbabwe-stun-sri-lanka-fire-warning-shot-at-india/articleshow/128556764.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/sports/international-sports/deenthegreat-issues-apology-after-tiki-ghosn-clash-comments-on-dana-white/articleshow/128563148.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/life-style/travel/hotels/the-mold-covered-hotel-room-the-sticky-pillowsthings-i-never-thought-i-would-experience-in-nainital/articleshow/128563203.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/business/india-business/wake-up-call-for-individual-taxpayers-foreign-assets-reporting-in-focus-what-you-should-know/articleshow/128561574.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/india/absolutely-unacceptable-israel-condemns-racially-motivated-attack-on-2-indian-workers-in-ashkelon/articleshow/128563201.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/india/bengal-will-have-its-fish-meat-state-bjp-chief-samik-bhattacharya-refutes-cm-mamatas-claim/articleshow/128561509.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/business/international-business/us-trade-gap-widens-as-goods-deficit-hits-record-1-24-trillion-in-2025/articleshow/128562261.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/sports/international-sports/milano-cortina-2026-winter-olympics-closing-ceremony-date-venue-time-and-full-schedule-for-grand-finale-in-verona/articleshow/128560605.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/sports/cricket/icc-mens-t20-world-cup/international-cricket-will-expose-you-mohammad-amir-tears-into-abhishek-sharma-again/articleshow/128551381.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/world/uk/epstein-sent-woman-andrew-sent-confidential-documents-what-uk-police-is-probing-in-ex-british-princes-arrest/articleshow/128553850.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/city/delhi/dwarka-suv-crash-victim-sahil-dhaneshras-mother-refuses-to-accept-apology-by-accused-teens-father/articleshow/128542470.cms     
+Saved
+Processing: https://timesofindia.indiatimes.com/india/assam-assembly-polls-congress-releases-20-point-chargesheet-against-bjp-govt-accuses-it-of-rampant-corruption/articleshow/128559073.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/city/delhi/deadly-thread-in-the-sky-why-chinese-manjha-remains-a-killer/articleshow/128546461.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/world/rest-of-world/harrison-okene-the-man-who-survived-three-days-under-a-boat-at-the-bottom-of-the-sea/articleshow/128558774.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/city/hyderabad/i-t-probe-into-hyd-biryani-joints-blows-lid-off-multi-crore-tax-evasion-scam-across-india/articleshow/128522871.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/sports/nhl/news/mitch-marners-olympic-ot-winner-sparks-toronto-bias-controversy-as-canada-storms-into-semifinals/articleshow/128560080.cms 
+Saved
+Processing: https://timesofindia.indiatimes.com/world/uk/law-must-take-its-course-king-charles-on-arrest-of-his-brother-andrew-mountbatten-windsor-amid-epstein-probe/articleshow/128557567.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/world/uk/former-royal-prince-andrew-mountbatten-windsor-arrested-amid-epstein-row-what-we-know-so-far/articleshow/128553661.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/business/india-business/stock-market-today-nifty50-bse-sensex-february-19-2026-dalal-street-indian-equities-global-markets/articleshow/128537423.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/india/tmc-mp-mahua-moitra-moves-delhi-high-court-against-ex-partner-seeking-custody-of-pet-rottweiler-henry/articleshow/128555939.cms      
+Saved
+Processing: https://timesofindia.indiatimes.com/entertainment/tamil/movies/news/regina-cassandra-calls-out-bollywood-double-standards-says-judged-for-my-roots-not-my-talent/articleshow/128551020.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/world/uk/just-bed-and-toilet-no-royal-privileges-for-arrested-ex-prince-andrew-mountbatten-windsor/articleshow/128555634.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/religion/festivals/ramadan-2026-when-is-first-roza-in-india-check-sehri-and-iftar-timings-in-delhi-mumbai-and-hyderabad/articleshow/128538460.cms
+Saved
+Processing: https://timesofindia.indiatimes.com/world/uk/from-prince-to-just-andrew-why-king-charles-iii-stripped-off-brothers-royal-titles-epstein-files/articleshow/128556470.cms        
+Saved
+Processing: https://www.hindustantimes.com/india-news/meghalaya-to-amend-law-to-address-concerns-over-illegal-immigration-conrad-sangma-101771519717943.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/india-to-resume-visa-services-in-bangladesh-soon-says-senior-consular-official-101771513188416.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/india-to-join-pax-silica-us-led-ai-and-chip-supply-chain-initiative-on-friday-101771516594816.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/7yearolds-escape-leads-cops-to-child-trafficking-network-in-arunachal-pradesh-101771514561361.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/switzerland-to-host-2027-ai-summit-in-geneva-uae-in-2028-president-parmelin-101771514558469.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/trump-repeats-claim-of-stopping-india-pakistan-conflict-with-new-twist-11-expensive-jets-shot-down-101771513892850.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/netherlands-pm-schoof-urges-global-bloc-for-responsible-ai-cites-india-partnership-101771509867779.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/didnt-know-what-what-sam-altman-said-on-his-awkward-exchange-with-dario-amodei-on-stage-ai-impact-summit-101771504701915.html        
+Saved
+Processing: https://www.hindustantimes.com/india-news/man-detained-in-kota-for-threatening-to-shoot-rahul-gandhi-other-cong-mps-101771506241505.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/train-bounces-like-table-tennis-ball-congress-mp-manish-tewari-flags-dangerous-delhi-chandigarh-rail-route-101771507302489.html      
+Saved
+Processing: https://www.hindustantimes.com/india-news/no-relatives-here-dont-want-her-to-suffer-what-ex-isro-employee-who-killed-wife-in-bengaluru-told-police-101771501145554.html        
+Saved
+Processing: https://www.hindustantimes.com/india-news/uttarakhand-hc-takes-suo-motu-cognizance-of-kainchi-dham-temple-mismanagement-101771501931232.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/inaugural-address-bilateral-meets-ceos-forum-pm-modis-jam-packed-day-at-ai-summit-101771501070833.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/this-is-what-galgotias-teaches-omar-abdullah-slams-university-amid-robodog-row-101771497951091.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/naxalaffected-districts-in-india-reduce-to-7-in-latest-review-101771498707520.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/temperatures-to-rise-in-northwest-india-ahead-of-pre-monsoon-season-imd-101771498269212.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/hyderabad-ex-husband-stabs-pregnant-woman-to-death-smashes-head-with-flower-pot-101771490985071.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/what-is-sarvam-indias-ai-model-praised-by-google-ceo-pichai-and-has-an-edge-against-chatgpt-claude-101771491967365.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/supreme-court-closes-plea-over-ghooskhor-pandat-after-filmmaker-drops-name-101771496888771.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/manipur-cm-appeals-to-idps-to-help-govt-overcome-trust-deficit-among-communities-101771496196547.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/nhrc-flags-misuse-of-its-name-logo-by-ngos-directs-authorities-to-take-action-101771494572565.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/amit-shah-to-launch-second-phase-of-vibrant-village-programme-in-assam-on-friday-101771494446086.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/ai-impact-summit-pm-modi-unveils-manav-ai-vision-promoting-ethical-inclusive-ai-101771493287997.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/odisha-govt-writes-to-centre-urges-for-safe-return-of-6-stranded-workers-from-thailand-101771492887996.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/karnataka-contractor-killed-wife-buried-her-in-courtyard-police-101771492266115.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/sc-disposes-of-plea-against-ghooskhor-pandat-after-filmmaker-neeraj-pandey-says-title-withdrawn-101771491331759.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/watch-sundar-pichai-on-a-break-at-ai-summit-enjoys-malabar-coffee-101771489722984.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/manipur-editor-in-chief-of-local-vernacular-daily-shot-at-assaulted-probe-on-101771488785850.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/amid-indias-sovereign-ai-push-a-look-at-3-models-tailor-made-for-india-sarvamai-gnani-ai-bharatgen-pm-modi-101771487495175.html      
+Saved
+Processing: https://www.hindustantimes.com/india-news/has-galgotias-university-professor-neha-singh-been-fired-after-ai-summit-robodog-fiasco-linkedin-status-sparks-buzz-101771483005235.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/bill-gates-skips-ai-impact-summit-amid-public-scrutiny-over-epstein-ties-101771486924926.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/supreme-court-slams-freebies-given-by-political-parties-says-it-hampers-economic-development-101771485750725.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/sc-slams-freebies-culture-says-states-should-open-avenues-for-employment-101771485840610.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/pnb-loan-fraud-ed-calls-nehal-modi-co-conspirator-seeks-to-declare-him-feo-101771485363830.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/india-has-done-what-no-other-country-has-macron-hails-digital-transformation-of-nation-101771480000587.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/ai-must-be-safe-accessible-and-powered-by-clean-energy-un-chief-antonio-guterres-101771483202078.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/india-airlines-navitaire-outage-check-ins-delhi-airport-igia-impacted-europe-apac-region-101771481960110.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/india-unveils-new-delhi-frontier-ai-full-details-on-the-2-commitments-101771481868439.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/gujarat-budget-2026-27-no-new-taxes-regional-focus-in-4-08-lakh-crore-budget-101771480607605.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/pm-modi-explains-how-ai-can-benefit-all-right-direction-democratised-india-ai-impact-summit-2026-101771480574151.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/interactions-with-other-men-marriage-pressure-why-indore-man-piyush-dhanotia-killed-mba-classmate-101771474823859.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/how-a-biryani-joint-check-in-hyderabad-uncovered-a-rs-70-000-crore-tax-evasion-scam-across-india-101771478527422.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/single-mother-s-child-entitled-to-her-name-caste-in-school-bombay-hc-101771480320411.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/india-sees-fortune-in-ai-not-fear-pm-modi-at-india-ai-summit-101771478950608.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/watch-artificial-intelligence-translates-pm-modi-speech-at-ai-impact-summit-2026-to-sign-language-real-time-101771478500821.html     
+Saved
+Processing: https://www.hindustantimes.com/india-news/pm-modi-presents-manav-vision-at-ai-summit-what-it-stands-for-101771478234657.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/india-leading-ai-revolution-benchmark-at-happiness-welfare-for-all-says-pm-modi-at-ai-impact-summit-2026-101771478032452.html        
+Saved
+Processing: https://www.hindustantimes.com/india-news/historicity-how-mughals-conquered-riverine-bangladesh-101771478099430.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/as-political-pressure-prompts-exodus-of-minnesota-prosecutors-some-defendants-catch-a-break-101771477764243.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/anil-ambani-files-undertaking-in-supreme-court-says-he-will-not-leave-india-101771476598413.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/weekend-events-you-can-t-miss-in-chennai-feb-2022-101771475214371.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/delhi-dwarka-suv-crash-accused-did-not-understand-preciousness-of-life-after-killing-biker-sahil-dhaneshra-101771468890070.html      
+Saved
+Processing: https://www.hindustantimes.com/india-news/bill-gates-to-skip-india-ai-summit-today-to-ensure-focus-remains-on-key-priorities-gates-foundation-statement-101771470719925.html   
+Saved
+Processing: https://www.hindustantimes.com/india-news/nia-chargesheet-against-3-accused-in-myanmar-human-trafficking-case-101771469795189.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/pm-modi-meets-eu-leaders-on-ai-summit-margins-101771469233801.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/now-you-re-in-b-luru-eat-quite-as-the-romans-do-101771443702727.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/federalism-needs-reset-cm-stalin-tables-justice-kurian-report-101771443458395.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/navy-plays-vital-role-in-promoting-goodwill-says-president-murmu-101771443403569.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/over-60-elected-councillors-from-obc-says-t-gana-backward-classes-body-chief-101771443398150.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/exit-blame-apology-and-centres-warning-galgotias-universitys-chinese-robodog-row-at-ai-summit-2026-key-points-101771466897249.html   
+Saved
+Processing: https://www.hindustantimes.com/india-news/27yrold-accused-of-raping-killing-minor-dies-by-suicide-101771443218024.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/kerala-bars-allowed-to-run-for-2-more-hours-101771443105621.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/sabarimalas-chief-priest-gets-bail-in-theft-case-101771443099293.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/ai-impact-summit-delhi-2026-live-updates-day-4-ambani-modi-bill-gates-sam-altman-galgotias-university-row-latest-news-101771463480410.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/oppn-slams-order-to-curb-media-activities-in-k-taka-assembly-101771442917628.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/safaris-in-nagarhole-bandipur-to-resume-from-feb-19-khandre-101771442797409.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/cant-say-when-will-i-return-to-india-vijay-mallya-tells-hc-101771442677892.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/assam-bjp-social-media-conveners-booked-over-point-blank-clip-101771442562606.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/govt-officials-leaking-sensitive-information-to-media-may-face-action-under-official-secrets-act-101771463898634.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/hc-dm-s-certificate-valid-to-change-gender-in-passport-101771442557858.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/world-lacks-rigorous-scientific-methods-to-test-ai-safety-rumman-chowdhury-101771442384020.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/rajya-sabha-elections-tmc-set-to-win-4-bengal-seats-bjp-to-secure-one-101771463435752.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/punjab-aap-sarpanch-shot-dead-at-wedding-101771442378690.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/rajya-sabha-polls-on-march-16-bjp-led-nda-tally-to-go-up-101771456046101.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/dgca-proposes-tougher-new-rules-to-tackle-unruly-flyers-101771456452993.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/grossly-distorted-ed-on-mamata-s-i-pac-raids-claims-101771442196946.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/ai-summit-artificial-generative-intelligence-may-be-on-horizon-in-5-10-years-google-deepmind-ceo-demis-hassabis-101771456676227.html 
+Saved
+Processing: https://www.hindustantimes.com/india-news/retired-isro-employee-held-for-killing-wife-101771442737828.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/teen-driver-behind-suv-accident-in-delhis-dwarka-appeared-to-show-no-remorse-says-juvenile-justice-board-101771457373237.html        
+Saved
+Processing: https://www.hindustantimes.com/india-news/approach-centre-for-racial-slur-as-hate-crime-sc-101771442737412.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/district-magistrates-certificate-enough-to-prove-trans-persons-gender-identity-for-passport-allahabad-hc-101771457793809.html        
+Saved
+Processing: https://www.hindustantimes.com/india-news/india-may-induct-3rd-n-powered-ballistic-missile-sub-in-apr-101771442317101.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/robodog-row-galgotias-out-of-ai-summit-101771442376956.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/sc-junks-move-to-reclaim-108-ha-guj-grazing-land-from-adani-ports-101771442686306.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/digital-swing-states-how-middle-powers-can-bridge-the-global-ai-divide-101771441296823.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/india-ai-summit-google-to-lay-undersea-cable-linking-india-and-the-us-singapore-south-africa-and-australia-101771440818456.html      
+Saved
+Processing: https://www.hindustantimes.com/india-news/trump-weeks-after-backlash-over-racist-post-hosts-black-history-month-reception-101771449845105.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/woman-software-employee-murdered-by-ex-husband-in-hyderabad-101771447872969.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/india-well-positioned-to-be-leader-in-ai-incredible-optimism-unlike-anxiety-in-west-rishi-sunak-101771442471856.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/trump-official-says-us-did-not-censor-colbert-interview-but-is-probing-abc-s-the-view-101771439562302.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/acts-preceding-actual-partial-penetration-without-ejaculation-is-attempt-to-rape-chhattisgarh-hc-101771439499089.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/human-race-years-away-from-artificial-general-intelligence-ai-pioneer-yann-lecun-at-ai-impact-summit-101771434730559.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/cec-gyanesh-kumar-reviews-poll-preps-in-assam-new-evm-features-to-improve-voter-experience-101771434895440.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/bhupen-bora-was-last-hindu-leader-of-congress-assam-cm-sarma-101771434005914.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/target-50-votes-in-each-booth-nitin-nabin-to-bjp-workers-in-assam-101771433778487.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/pm-modi-to-welcome-world-leaders-at-ai-summit-on-thursday-address-gathering-101771431433856.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/pm-modi-spain-s-s-nchez-call-for-inclusive-ai-deeper-india-eu-tech-ties-101771430915700.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/bengaluru-men-kidnap-spa-owner-demands-rs-2-lakh-ransom-police-finds-online-gaming-link-101771428653785.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/bengaluru-ex-isro-employee-strangles-wife-at-home-worried-about-wifes-future-after-his-death-101771426308485.html
+Saved
+Processing: https://www.hindustantimes.com/india-news/quote-of-the-day-india-can-be-full-stack-player-in-ai-says-sundar-pichai-101771428647154.html
+Saved
+Finished
+
+▶ Running classify_news.py
+[DONE] Classified 473 news items
+[OUTPUT] C:\Taniya\Web Development\Hermes\project\data\classified_news.json
+
+▶ Running LCR_classified.py
+Classification complete! Results saved to data/classified_results.json
+
+Summary:
+Total Articles: 473
+Political Articles: 145
+Non-Political Articles: 328
+
+Political Bias Distribution:
+  Left: 88
+  Center: 13
+  Right: 4
+  Undefined: 40
+
+================================================================================
+Sample Article Classification:
+================================================================================
+News ID: 1
+Category: political
+Main Source: The Hindu
+
+Bias Classification:
+{
+  "final_bias": "left",
+  "wing_distribution": {
+    "left": 66.67,
+    "center": 0.0,
+    "right": 0.0,
+    "unbiased": 0.0,
+    "unknown": 33.33
+  },
+  "reference_count_by_bias": {
+    "left": 2,
+    "unknown": 1
+  },
+  "total_references": 3
+}
+
+✅ Pipeline completed
+
+C:\Taniya\Web Development\Hermes\project>           
+
+
+
