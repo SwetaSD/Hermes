@@ -8,5 +8,3 @@ sentence-transformers
 scikit-learn
 playwright
 lxml
-supabase
-python-dotenv
