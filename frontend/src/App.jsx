@@ -1,121 +1,81 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React, { useState, useEffect } from 'react';
+import './index.css';
+import './App.css';
+
+import Header from './components/Header';
+import FeaturedStory from './components/FeaturedStory';
+import TrendingGrid from './components/TrendingGrid';
+import StoryList from './components/StoryList';
+import Footer from './components/Footer';
+
+import { processRawData } from './utils/dataMapping';
+import classifiedData from '../../project/data/classified_results.json';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [stories, setStories] = useState([]);
+  const [featuredStory, setFeaturedStory] = useState(null);
+  const [trendingStories, setTrendingStories] = useState([]);
+  const [listStories, setListStories] = useState([]);
+
+  useEffect(() => {
+    // Process the imported JSON
+    const processed = processRawData(classifiedData);
+    setStories(processed);
+
+    if (processed.length > 0) {
+      // 1. Featured - taking a prominent political story if available
+      const featured = processed.find(s => s.category.toLowerCase() === 'political') || processed[0];
+      featured.imageUrl = '/src/assets/hero.png';
+      featured.customDesc = "Work begins on the new facility to store EVMs and VVPATs in Ranipet and Tirupattur districts, aiming to bolster election readiness and security.";
+      setFeaturedStory(featured);
+
+      // 2. Trending - taking next 3
+      // We will manually pick a few diverse ones from the JSON or mock their categories for visual variety
+      const trending = processed.filter(s => s.id !== featured.id).slice(0, 3);
+      
+      if (trending[0]) { trending[0].category = 'TECHNOLOGY'; trending[0].imageUrl = '/src/assets/tech.png'; }
+      if (trending[1]) { trending[1].category = 'CLIMATE'; trending[1].imageUrl = '/src/assets/climate.png'; }
+      if (trending[2]) { trending[2].category = 'ECONOMY'; trending[2].imageUrl = '/src/assets/economy.png'; }
+      
+      setTrendingStories(trending);
+
+      // 3. List - taking the rest
+      const remaining = processed.filter(s => 
+        s.id !== featured.id && !trending.find(t => t.id === s.id)
+      );
+      // Let's add some variety to the list categories since the raw data is entirely 'political'
+      const categories = ['SCIENCE', 'HEALTH', 'SECURITY', 'CONFLICT', 'POLITICS'];
+      remaining.forEach((s, i) => {
+        if (s.category === 'political') {
+           s.category = categories[i % categories.length];
+        } else {
+           s.category = s.category.toUpperCase();
+        }
+      });
+      setListStories(remaining);
+    }
+  }, []);
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="app-container">
+      <Header 
+        totalSources={classifiedData?.total_articles || 0} 
+        totalStories={stories.length || 0} 
+      />
+      
+      <main className="main-content container">
+        {featuredStory && <FeaturedStory story={featuredStory} />}
+        
+        {trendingStories.length > 0 && <TrendingGrid stories={trendingStories} />}
+        
+        <div className="w-full h-px bg-gray-200 my-12" style={{ backgroundColor: 'var(--border)' }}></div>
+        
+        {listStories.length > 0 && <StoryList stories={listStories} />}
+      </main>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
