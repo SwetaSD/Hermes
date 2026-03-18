@@ -1,7 +1,4 @@
-import React from 'react';
-
 const BiasVisualizer = ({ biasScale }) => {
-
   if (!biasScale) return null;
 
   return (

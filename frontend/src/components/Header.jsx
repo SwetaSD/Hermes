@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { Search, Zap } from 'lucide-react';
 import { format } from 'date-fns';
 
@@ -8,27 +9,27 @@ const Header = ({ totalSources, totalStories }) => {
   return (
     <header className="header-wrapper animate-fade-in">
       {/* Top Banner Ticker */}
-      <div className="header-ticker">
+      {/* <div className="header-ticker">
         <div className="ticker-content">
           <span className="flex items-center gap-1"><Zap size={14} /> LIVE</span>
           <span>SHUTDOWN LOOMS</span>
           <span className="text-gray-400">TECHNOLOGY | AI Regulation Framework Proposed by European Commission</span>
           <span className="text-gray-400">CLIMATE | Record Temperatures Across Southern Europe Spark Wildfire Emergencies</span>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Navigation */}
       <div className="header-top">
-        <div className="logo cursor-pointer hover:opacity-80 transition-opacity">
+        <NavLink to="/" className="logo cursor-pointer hover:opacity-80 transition-opacity">
           <div className="logo-icon font-bold">H</div>
           <span>HERMES</span>
-        </div>
+        </NavLink>
 
         <nav className="nav-links">
-          <a href="#" className="nav-link active">HOME</a>
-          <a href="#" className="nav-link">EXPLORE</a>
-          <a href="#" className="nav-link">BIAS MAP</a>
-          <a href="#" className="nav-link">ABOUT</a>
+          <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>HOME</NavLink>
+          <NavLink to="/explore" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>EXPLORE</NavLink>
+          <NavLink to="/bias" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>BIAS MAP</NavLink>
+          <NavLink to="/about" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>ABOUT</NavLink>
         </nav>
 
         <div className="header-actions">
@@ -40,10 +41,10 @@ const Header = ({ totalSources, totalStories }) => {
       </div>
 
       {/* Date and Stats Sub-bar */}
-      <div className="header-date">
+      {/* <div className="header-date">
         <span>{today}</span>
         <span className="hidden sm:inline">Tracking {totalSources || 0} sources across {totalStories || 0} stories</span>
-      </div>
+      </div> */}
     </header>
   );
 };
