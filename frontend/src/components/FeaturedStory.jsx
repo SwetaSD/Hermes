@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Layers } from 'lucide-react';
 import BiasVisualizer from './BiasVisualizer';
 
@@ -38,9 +39,9 @@ const FeaturedStory = ({ story }) => {
           <BiasVisualizer biasScale={story.biasScale} />
         </div>
 
-        <a href={story.url} className="read-full mt-8 tracking-wider font-bold" target="_blank" rel="noopener noreferrer">
+        <Link to={`/article/${story.id}`} className="read-full mt-8 tracking-wider font-bold">
           READ FULL ANALYSIS <ArrowRight size={16} strokeWidth={2} />
-        </a>
+        </Link>
       </div>
     </section>
   );

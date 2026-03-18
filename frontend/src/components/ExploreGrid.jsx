@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Layers } from 'lucide-react';
 import BiasVisualizer from './BiasVisualizer';
 
@@ -62,12 +63,12 @@ const ExploreGrid = ({ stories, viewMode }) => {
                 </span>
               </div>
               
-              <h3 
-                className={`font-serif font-bold text-black group-hover:text-gray-600 transition-colors mb-2 ${viewMode === 'list' ? 'leading-tight' : 'text-xl leading-snug line-clamp-3'}`}
+              <Link to={`/article/${story.id}`}
+                className={`block font-serif font-bold text-black group-hover:text-gray-600 transition-colors mb-2 ${viewMode === 'list' ? 'leading-tight' : 'text-xl leading-snug line-clamp-3'}`}
                 style={viewMode === 'list' ? { fontSize: '1.75rem' } : {}}
               >
                 {story.title}
-              </h3>
+              </Link>
               
               <p 
                 className={`text-gray-500 ${viewMode === 'list' ? 'mb-4 text-base' : 'mb-4 text-sm line-clamp-3'} leading-relaxed`}

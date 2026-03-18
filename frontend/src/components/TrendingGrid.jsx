@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Layers } from 'lucide-react';
 import BiasVisualizer from './BiasVisualizer';
 
@@ -36,7 +37,9 @@ const TrendingGrid = ({ stories }) => {
                 </span>
               </div>
 
-              <h3 className="trending-title !text-2xl !leading-snug !mb-3">{story.title}</h3>
+              <Link to={`/article/${story.id}`}>
+                <h3 className="trending-title !text-2xl !leading-snug !mb-3 hover:text-gray-500 transition-colors">{story.title}</h3>
+              </Link>
               <p className="trending-desc !text-gray-500 !text-sm">
                 {story.category === 'TECHNOLOGY'
                   ? "The European Commission unveiled comprehensive AI regulations that could reshape the global tech landscape."

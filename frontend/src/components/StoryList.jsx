@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Layers } from 'lucide-react';
 import BiasVisualizer from './BiasVisualizer';
 
@@ -48,9 +49,9 @@ const StoryList = ({ stories }) => {
                 <span>{story.timeAgo}</span>
               </div>
 
-              <h3 className="list-title !text-xl !leading-tight !font-bold font-serif text-black group-hover:text-gray-600 transition-colors mb-4 line-clamp-3">
+              <Link to={`/article/${story.id}`} className="list-title !text-xl !leading-tight !font-bold font-serif text-black group-hover:text-gray-600 transition-colors mb-4 line-clamp-3 block">
                 {story.title}
-              </h3>
+              </Link>
 
               <div className="meta-info text-gray-400 mt-auto mb-3">
                 <Layers size={14} />
