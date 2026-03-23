@@ -40,7 +40,7 @@ const ExploreGrid = ({ stories, viewMode }) => {
               <img 
                 src={story.imageUrl || `https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&q=80&w=600`} 
                 alt={story.title} 
-                className="w-full h-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover  transition-transform duration-500 group-hover:scale-105"
               />
             </div>
             
