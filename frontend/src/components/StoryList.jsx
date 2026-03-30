@@ -3,14 +3,18 @@ import { Link } from 'react-router-dom';
 import { Layers } from 'lucide-react';
 import BiasVisualizer from './BiasVisualizer';
 
-const CATEGORIES = ['ALL', 'POLITICS', 'TECHNOLOGY', 'CLIMATE', 'ECONOMY', 'SCIENCE', 'HEALTH', 'SECURITY', 'CONFLICT'];
+const CATEGORIES = ['ALL', 'POLITICAL', 'GENERAL'];
 
 const StoryList = ({ stories }) => {
   const [activeTab, setActiveTab] = useState('ALL');
 
   const filteredStories = activeTab === 'ALL'
     ? stories
-    : stories.filter(s => s.category.toUpperCase() === activeTab);
+    : stories.filter(s => {
+        if (activeTab === 'POLITICAL') return s.category === 'political';
+        if (activeTab === 'GENERAL') return s.category === 'non_political';
+        return true;
+      });
 
   if (!stories || stories.length === 0) return null;
 
@@ -36,15 +40,18 @@ const StoryList = ({ stories }) => {
           <div key={story.id} className="list-item animate-fade-in group flex gap-6" style={{ animationDelay: `${i * 0.05}s` }}>
             <div className="list-image-container w-28 h-24 flex-shrink-0 border border-gray-200">
               <img
-                src={story.imageUrl || `https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&q=80&w=200`}
+                src={story.imageUrl}
                 alt={story.title}
                 className="list-image w-full h-full object-cover grayscale contrast-125 transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&q=80&w=200'; }}
               />
             </div>
 
             <div className="list-content flex-1 flex flex-col">
               <div className="meta-info text-gray-400 mb-2">
-                <span className="list-category !text-gray-400 !font-bold">{story.category}</span>
+                <span className="list-category !text-gray-400 !font-bold">
+                  {story.category === 'non_political' ? 'GENERAL' : story.category.toUpperCase()}
+                </span>
                 <span className="meta-dot bg-gray-300"></span>
                 <span>{story.timeAgo}</span>
               </div>

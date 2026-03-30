@@ -28,11 +28,14 @@ const ExploreGrid = ({ stories, viewMode }) => {
           >
             <div className={`explore-card__image-wrapper ${viewMode === 'list' ? 'explore-card__image-wrapper--list' : ''}`}>
               <img 
-                src={story.imageUrl || `https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&q=80&w=600`} 
+                src={story.imageUrl} 
                 alt={story.title} 
                 className="explore-card__image"
+                onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&q=80&w=600'; }}
               />
-              <span className="explore-card__category-badge">{story.category}</span>
+              <span className="explore-card__category-badge">
+                {story.category === 'non_political' ? 'GENERAL' : story.category.toUpperCase()}
+              </span>
             </div>
             
             <div className={`explore-card__body ${viewMode === 'list' ? 'explore-card__body--list' : ''}`}>

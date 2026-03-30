@@ -1,11 +1,42 @@
+/**
+ * Computes a human-readable relative time string from a date string.
+ * Falls back to a seed-based synthetic time if parsing fails.
+ */
+export const getTimeAgo = (publishedAt, seedId = 0) => {
+  if (!publishedAt) {
+    // Fallback for missing dates
+    const hours = (seedId % 24) + 1;
+    return `${hours}h ago`;
+  }
+
+  try {
+    const published = new Date(publishedAt);
+    const now = new Date();
+    const diffMs = now - published;
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMs / 3600000);
+    const diffDays = Math.floor(diffMs / 86400000);
+
+    if (diffMins < 1) return 'Just now';
+    if (diffMins < 60) return `${diffMins}m ago`;
+    if (diffHours < 24) return `${diffHours}h ago`;
+    if (diffDays < 7) return `${diffDays}d ago`;
+    if (diffDays < 30) return `${Math.floor(diffDays / 7)}w ago`;
+    return `${Math.floor(diffDays / 30)}mo ago`;
+  } catch (e) {
+    const hours = (seedId % 24) + 1;
+    return `${hours}h ago`;
+  }
+};
+
+/**
+ * Kept for backward compatibility — prefer real titles from data.
+ */
 export const extractTitleFromUrl = (url) => {
   if (!url) return "Unknown Title";
 
   try {
-    // Get the last or second to last segment
     const parts = url.split('/').filter(p => p.length > 0);
-
-    // Find the part that looks like the title (usually before the article/id part)
     let titlePart = parts[parts.length - 1];
     if (titlePart.includes('article') || titlePart.match(/^\d+$/) || titlePart.includes('.html') || titlePart.includes('.ece') || titlePart.includes('.cms')) {
       if (parts.length > 1) {
@@ -13,14 +44,11 @@ export const extractTitleFromUrl = (url) => {
       }
     }
 
-    // Sometimes the title is part of the filename like article-title-123.cms
     if (titlePart.includes('.html') || titlePart.includes('.ece') || titlePart.includes('.cms') || titlePart.includes('.aspx')) {
       titlePart = titlePart.split('.')[0];
-      // remove trailing numbers if possible
       titlePart = titlePart.replace(/-\d+$/, '');
     }
 
-    // Replace hyphens with spaces and capitalize words
     const readable = titlePart.split('-').map(word =>
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join(' ');
@@ -29,14 +57,6 @@ export const extractTitleFromUrl = (url) => {
   } catch (e) {
     return "News Article";
   }
-};
-
-/**
- * Generates synthetic "time ago" string to make UI look alive
- */
-export const getRandomTimeAgo = (seedId) => {
-  const hours = (seedId % 24) + 1;
-  return `${hours}h ago`;
 };
 
 /**
@@ -50,37 +70,39 @@ export const normalizeBiasData = (biasClassification) => {
 };
 
 /**
- * Generates a short snippet/description from the article URL and source
+ * Strip HTML tags from a string (some description fields contain raw HTML)
  */
-export const generateSnippet = (url, source) => {
-  if (!url) return "Coverage details are being analyzed across multiple media outlets.";
+const stripHtml = (html) => {
+  if (!html) return '';
+  return html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
+};
 
-  try {
-    const parts = url.split('/').filter(p => p.length > 0);
-    // Find segments that look like readable content
-    const contentParts = parts
-      .filter(p => !p.includes('http') && !p.includes('www') && !p.match(/^\d+$/) && p.length > 3)
-      .slice(-3)
-      .map(p => {
-        let cleaned = p.split('.')[0]; // remove .html, .ece etc.
-        cleaned = cleaned.replace(/-\d+$/, ''); // remove trailing numbers
-        return cleaned.replace(/-/g, ' ');
-      })
-      .filter(p => p.length > 5);
+// Pool of fallback Unsplash news images
+const FALLBACK_IMAGES = [
+  'https://images.unsplash.com/photo-1504711434969-e33886168d5c?auto=format&fit=crop&q=80&w=800',
+  'https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=80&w=800',
+  'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&q=80&w=800',
+  'https://images.unsplash.com/photo-1557992260-ec58e38d363c?auto=format&fit=crop&q=80&w=800',
+  'https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?auto=format&fit=crop&q=80&w=800',
+  'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?auto=format&fit=crop&q=80&w=800',
+  'https://images.unsplash.com/photo-1541872526-9f8f260170a7?auto=format&fit=crop&q=80&w=800',
+  'https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&q=80&w=800',
+  'https://images.unsplash.com/photo-1558434653-271dbdebfbc7?auto=format&fit=crop&q=80&w=800',
+  'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=800',
+  'https://images.unsplash.com/photo-1523995462485-3d171b5c8fa9?auto=format&fit=crop&q=80&w=800',
+  'https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&q=80&w=800',
+];
 
-    if (contentParts.length > 0) {
-      const topic = contentParts[contentParts.length - 1];
-      const capitalized = topic.charAt(0).toUpperCase() + topic.slice(1);
-      return `${capitalized}. This story is being tracked across multiple outlets including ${source || 'various sources'}, revealing divergent framing and editorial perspectives.`;
-    }
-  } catch (e) {
-    // fall through
-  }
-  return `This story is being tracked across multiple media outlets including ${source || 'various sources'}.`;
+/**
+ * Get a deterministic fallback image based on index
+ */
+export const getFallbackImage = (index) => {
+  return FALLBACK_IMAGES[index % FALLBACK_IMAGES.length];
 };
 
 /**
- * Process raw JSON into a flat array of article objects suitable for components
+ * Process raw JSON into a flat array of article objects suitable for components.
+ * Maps the new bias_classified_output.json structure.
  */
 export const processRawData = (rawData) => {
   if (!rawData || (!rawData.political_articles_data && !rawData.non_political_articles_data)) return [];
@@ -90,20 +112,37 @@ export const processRawData = (rawData) => {
     ...(rawData.non_political_articles_data || [])
   ];
 
-  return allArticles.map(article => ({
-    id: article.news_id,
-    title: extractTitleFromUrl(article.main_news?.url),
-    url: article.main_news?.url,
-    source: article.main_news?.source || "Unknown Source",
+  return allArticles.map((article, index) => ({
+    id: index,
+    // Real title from input_article, fallback to URL extraction
+    title: article.input_article?.title || extractTitleFromUrl(article.input_article?.url),
+    url: article.input_article?.url,
+    source: article.input_article?.source_name || "Unknown Source",
     category: article.category || "General",
-    timeAgo: getRandomTimeAgo(article.news_id),
-    sourcesCount: article.bias_classification?.total_references || 1,
+    // Real publish time
+    timeAgo: getTimeAgo(article.input_article?.publishedAt, index),
+    publishedAt: article.input_article?.publishedAt,
+    // Real image from the article
+    imageUrl: article.input_article?.image_url || getFallbackImage(index),
+    sourcesCount: article.bias_classification?.total_sources || 1,
     biasScale: normalizeBiasData(article.bias_classification),
     finalBias: article.bias_classification?.final_bias || 'unknown',
-    snippet: generateSnippet(article.main_news?.url, article.main_news?.source),
-    references: (article.references || []).map(ref => ({
-      source: ref.source,
-      url: ref.url
+    // Real summaries
+    snippet: article.input_article?.summary || article.story_summary || "Coverage details are being analyzed across multiple media outlets.",
+    storySummary: article.story_summary || article.input_article?.summary || "",
+    // Bias breakdown
+    referenceCountByBias: article.bias_classification?.reference_count_by_bias || {},
+    // Related reports with full real data
+    references: (article.related_reports || []).map((ref, refIdx) => ({
+      title: ref.title || extractTitleFromUrl(ref.url),
+      source: ref.source_name || "Unknown Source",
+      url: ref.url,
+      publishedAt: ref.publishedAt,
+      timeAgo: getTimeAgo(ref.publishedAt, index * 10 + refIdx),
+      summary: ref.summary || stripHtml(ref.description) || "",
+      imageUrl: ref.image_url || getFallbackImage(index + refIdx + 5),
+      bias: ref.bias || 'unknown',
+      similarityScore: ref.similarity_score || 0,
     }))
   }));
 };

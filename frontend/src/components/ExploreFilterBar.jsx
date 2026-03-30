@@ -1,8 +1,8 @@
 import React from 'react';
 import { Search, LayoutGrid, List } from 'lucide-react';
 
-const CATEGORIES = ['ALL', 'POLITICS', 'TECHNOLOGY', 'CLIMATE', 'ECONOMY', 'SCIENCE', 'HEALTH', 'SECURITY', 'CONFLICT'];
-const BIAS_CATEGORIES = ['ALL', 'FAR LEFT', 'LEFT', 'CENTER LEFT', 'CENTER', 'CENTER RIGHT', 'RIGHT', 'FAR RIGHT'];
+const CATEGORIES = ['ALL', 'POLITICAL', 'GENERAL'];
+const BIAS_CATEGORIES = ['ALL', 'LEFT', 'CENTER', 'RIGHT'];
 
 const ExploreFilterBar = ({ 
   searchTerm, 

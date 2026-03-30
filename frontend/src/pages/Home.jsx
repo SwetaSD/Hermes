@@ -6,7 +6,7 @@ import StoryList from '../components/StoryList';
 import Footer from '../components/Footer';
 
 import { processRawData } from '../utils/dataMapping';
-import classifiedData from '../../../project/data/classified_results.json';
+import classifiedData from '../../../project/data/bias_classified_output.json';
 
 const Home = () => {
   const [stories, setStories] = useState([]);
@@ -15,39 +15,26 @@ const Home = () => {
   const [listStories, setListStories] = useState([]);
 
   useEffect(() => {
-    // Process the imported JSON
     const processed = processRawData(classifiedData);
     setStories(processed);
 
     if (processed.length > 0) {
-      // 1. Featured - taking a prominent political story if available
-      const featured = processed.find(s => s.category.toLowerCase() === 'political') || processed[0];
-      featured.imageUrl = '/src/assets/hero.png';
-      featured.customDesc = "Work begins on the new facility to store EVMs and VVPATs in Ranipet and Tirupattur districts, aiming to bolster election readiness and security.";
+      // 1. Featured — pick the first political story with the most sources
+      const politicalSorted = processed
+        .filter(s => s.category === 'political')
+        .sort((a, b) => b.sourcesCount - a.sourcesCount);
+      const featured = politicalSorted[0] || processed[0];
       setFeaturedStory(featured);
 
-      // 2. Trending - taking next 3
-      const trending = processed.filter(s => s.id !== featured.id).slice(0, 3);
-      
-      if (trending[0]) { trending[0].category = 'TECHNOLOGY'; trending[0].imageUrl = '/src/assets/tech.png'; }
-      if (trending[1]) { trending[1].category = 'CLIMATE'; trending[1].imageUrl = '/src/assets/climate.png'; }
-      if (trending[2]) { trending[2].category = 'ECONOMY'; trending[2].imageUrl = '/src/assets/economy.png'; }
-      
+      // 2. Trending — next 3 stories (mix of categories, skip featured)
+      const trending = processed
+        .filter(s => s.id !== featured.id)
+        .slice(0, 3);
       setTrendingStories(trending);
 
-      // 3. List - taking the rest
-      const remaining = processed.filter(s => 
-        s.id !== featured.id && !trending.find(t => t.id === s.id)
-      );
-      
-      const categories = ['SCIENCE', 'HEALTH', 'SECURITY', 'CONFLICT', 'POLITICS'];
-      remaining.forEach((s, i) => {
-        if (s.category === 'political') {
-           s.category = categories[i % categories.length];
-        } else {
-           s.category = s.category.toUpperCase();
-        }
-      });
+      // 3. List — the rest
+      const usedIds = new Set([featured.id, ...trending.map(t => t.id)]);
+      const remaining = processed.filter(s => !usedIds.has(s.id));
       setListStories(remaining);
     }
   }, []);

@@ -5,25 +5,17 @@ const AggregateBiasChart = ({ stories }) => {
 
   // Calculate totals from actual story data
   const biasCounts = {
-    far_left: 0,
     left: 0,
-    center_left: 0,
     center: 0,
-    center_right: 0,
-    right: 0,
-    far_right: 0
+    right: 0
   };
 
   stories.forEach(story => {
     const scale = story.biasScale || {};
     if (Object.keys(scale).length > 0) {
-      biasCounts.far_left += (scale['Far Left'] || 0);
-      biasCounts.left += (scale['Left'] || scale.left || 0);
-      biasCounts.center_left += (scale['Center Left'] || 0);
-      biasCounts.center += (scale['Center'] || scale.center || 0);
-      biasCounts.center_right += (scale['Center Right'] || 0);
-      biasCounts.right += (scale['Right'] || scale.right || 0);
-      biasCounts.far_right += (scale['Far Right'] || 0);
+      biasCounts.left += (scale.left || 0);
+      biasCounts.center += (scale.center || 0);
+      biasCounts.right += (scale.right || 0);
     }
   });
 
@@ -35,13 +27,9 @@ const AggregateBiasChart = ({ stories }) => {
   };
 
   const data = [
-    { label: 'Far Left', key: 'far_left', color: '#1a1a1a', pct: getPct(biasCounts.far_left) },
-    { label: 'Left', key: 'left', color: '#333333', pct: getPct(biasCounts.left) },
-    { label: 'Center Left', key: 'center_left', color: '#555555', pct: getPct(biasCounts.center_left) },
-    { label: 'Center', key: 'center', color: '#777777', pct: getPct(biasCounts.center) },
-    { label: 'Center Right', key: 'center_right', color: '#555555', pct: getPct(biasCounts.center_right) },
-    { label: 'Right', key: 'right', color: '#333333', pct: getPct(biasCounts.right) },
-    { label: 'Far Right', key: 'far_right', color: '#1a1a1a', pct: getPct(biasCounts.far_right) }
+    { label: 'Left', key: 'left', color: '#dc3545', pct: getPct(biasCounts.left) },
+    { label: 'Center', key: 'center', color: '#f0c238', pct: getPct(biasCounts.center) },
+    { label: 'Right', key: 'right', color: '#2563eb', pct: getPct(biasCounts.right) },
   ];
 
   return (

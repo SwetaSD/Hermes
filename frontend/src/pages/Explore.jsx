@@ -6,7 +6,7 @@ import ExploreFilterBar from '../components/ExploreFilterBar';
 import ExploreGrid from '../components/ExploreGrid';
 
 import { processRawData } from '../utils/dataMapping';
-import classifiedData from '../../../project/data/classified_results.json';
+import classifiedData from '../../../project/data/bias_classified_output.json';
 
 const Explore = () => {
   const [stories, setStories] = useState([]);
@@ -15,54 +15,50 @@ const Explore = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('ALL');
   const [activeBias, setActiveBias] = useState('ALL');
-  const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
+  const [viewMode, setViewMode] = useState('grid');
 
   useEffect(() => {
-    // Process the imported JSON
+    // Process the imported JSON — real categories preserved
     const processed = processRawData(classifiedData);
-    
-    // Add visual variety to categories just like Home page does for mock display
-    const categories = ['SCIENCE', 'HEALTH', 'SECURITY', 'CONFLICT', 'POLITICS', 'TECHNOLOGY', 'CLIMATE', 'ECONOMY'];
-    processed.forEach((s, i) => {
-      if (s.category === 'political') {
-         s.category = categories[i % categories.length];
-      } else {
-         s.category = s.category.toUpperCase();
-      }
-    });
-
     setStories(processed);
   }, []);
 
   // Filter Logic
   const filteredStories = useMemo(() => {
     return stories.filter(story => {
-      // 1. Text Search (Title or Category)
+      // 1. Text Search (Title, Category, or Source)
       if (searchTerm) {
         const term = searchTerm.toLowerCase();
-        if (!story.title.toLowerCase().includes(term) && !story.category.toLowerCase().includes(term)) {
+        if (
+          !story.title.toLowerCase().includes(term) && 
+          !story.category.toLowerCase().includes(term) &&
+          !story.source.toLowerCase().includes(term)
+        ) {
           return false;
         }
       }
 
       // 2. Category Filter
-      if (activeCategory !== 'ALL' && story.category !== activeCategory) {
-        return false;
+      if (activeCategory !== 'ALL') {
+        const categoryMap = {
+          'POLITICAL': 'political',
+          'GENERAL': 'non_political',
+        };
+        const targetCategory = categoryMap[activeCategory];
+        if (targetCategory && story.category !== targetCategory) {
+          return false;
+        }
       }
 
       // 3. Bias Filter
       if (activeBias !== 'ALL') {
         const biasMapping = {
-          'FAR LEFT': 'far_left',
           'LEFT': 'left',
-          'CENTER LEFT': 'center_left',
           'CENTER': 'center',
-          'CENTER RIGHT': 'center_right',
           'RIGHT': 'right',
-          'FAR RIGHT': 'far_right'
         };
         const targetBias = biasMapping[activeBias];
-        if (story.bias !== targetBias) {
+        if (targetBias && story.finalBias !== targetBias) {
           return false;
         }
       }

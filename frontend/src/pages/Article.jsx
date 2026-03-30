@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Share2, BookmarkPlus } from 'lucide-react';
-import { processRawData, extractTitleFromUrl, getRandomTimeAgo, normalizeBiasData } from '../utils/dataMapping';
-import classifiedData from '../../../project/data/classified_results.json';
+import { processRawData, extractTitleFromUrl, getTimeAgo, normalizeBiasData, getFallbackImage } from '../utils/dataMapping';
+import classifiedData from '../../../project/data/bias_classified_output.json';
+
+const stripHtml = (html) => {
+  if (!html) return '';
+  return html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
+};
 
 const Article = () => {
   const { id } = useParams();
@@ -19,21 +23,38 @@ const Article = () => {
       ...(classifiedData.non_political_articles_data || [])
     ];
 
-    const foundArticle = allArticles.find(a => a.news_id === parseInt(id));
+    const articleIndex = parseInt(id);
+    const foundArticle = allArticles[articleIndex];
 
     if (foundArticle) {
       const biasData = normalizeBiasData(foundArticle.bias_classification);
       const processed = {
-        id: foundArticle.news_id,
-        url: foundArticle.main_news?.url,
-        title: extractTitleFromUrl(foundArticle.main_news?.url),
-        source: foundArticle.main_news?.source || "Unknown Source",
+        id: articleIndex,
+        url: foundArticle.input_article?.url,
+        title: foundArticle.input_article?.title || extractTitleFromUrl(foundArticle.input_article?.url),
+        source: foundArticle.input_article?.source_name || "Unknown Source",
         category: foundArticle.category || "General",
-        timeAgo: getRandomTimeAgo(foundArticle.news_id),
-        sourcesCount: foundArticle.bias_classification?.total_references || 1,
+        timeAgo: getTimeAgo(foundArticle.input_article?.publishedAt, articleIndex),
+        publishedAt: foundArticle.input_article?.publishedAt,
+        imageUrl: foundArticle.input_article?.image_url || getFallbackImage(articleIndex),
+        sourcesCount: foundArticle.bias_classification?.total_sources || 1,
         biasScale: biasData,
         finalBias: foundArticle.bias_classification?.final_bias || 'unknown',
-        references: foundArticle.references || [],
+        // Real summaries
+        summary: foundArticle.input_article?.summary || "",
+        storySummary: foundArticle.story_summary || "",
+        // Real related reports with per-source bias
+        references: (foundArticle.related_reports || []).map((ref, refIdx) => ({
+          title: ref.title || extractTitleFromUrl(ref.url),
+          source: ref.source_name || "Unknown Source",
+          url: ref.url,
+          publishedAt: ref.publishedAt,
+          timeAgo: getTimeAgo(ref.publishedAt, articleIndex * 10 + refIdx),
+          summary: ref.summary || stripHtml(ref.description) || "",
+          imageUrl: ref.image_url || getFallbackImage(articleIndex + refIdx + 5),
+          bias: ref.bias || 'unknown',
+          similarityScore: ref.similarity_score || 0,
+        })),
         referenceCountByBias: foundArticle.bias_classification?.reference_count_by_bias || {}
       };
       setArticle(processed);
@@ -41,16 +62,17 @@ const Article = () => {
       // Get related stories from same category
       const processedAll = processRawData(classifiedData);
       const related = processedAll
-        .filter(s => s.category.toLowerCase() === processed.category.toLowerCase() && s.id !== processed.id)
+        .filter(s => s.category === processed.category && s.id !== processed.id)
         .slice(0, 3);
       setRelatedStories(related);
     }
   }, [id]);
 
   if (!article) {
+    const processedAll = processRawData(classifiedData);
     return (
       <div className="app-container">
-        <Header totalSources={classifiedData?.total_articles || 0} totalStories={574} />
+        <Header totalSources={classifiedData?.total_articles || 0} totalStories={processedAll.length} />
         <main className="main-content container article-not-found">
           <h2>Article not found</h2>
           <Link to="/explore" className="back-link">Return to Explore</Link>
@@ -64,7 +86,6 @@ const Article = () => {
     return sourceName ? sourceName.charAt(0).toUpperCase() : 'U';
   };
 
-  // Map bias string to display color class
   const getBiasColor = (biasLabel) => {
     const label = (biasLabel || '').toLowerCase();
     if (label.includes('left')) return 'bias-tag--left';
@@ -74,39 +95,23 @@ const Article = () => {
     return 'bias-tag--unknown';
   };
 
-  // Determine per-reference bias from reference_count_by_bias 
-  // We infer the bias of each ref by distributing the counts
-  const getRefBias = (refIndex) => {
-    const counts = article.referenceCountByBias;
-    if (!counts || Object.keys(counts).length === 0) return 'unknown';
-    
-    // Build an expanded array of bias labels matching reference order
-    const expanded = [];
-    Object.entries(counts).forEach(([bias, count]) => {
-      for (let i = 0; i < count; i++) {
-        expanded.push(bias);
-      }
-    });
-    return expanded[refIndex] || 'unknown';
-  };
+  // Use the real story_summary or generate from available data
+  const getArticleSummary = () => {
+    if (article.storySummary) return article.storySummary;
+    if (article.summary) return article.summary;
 
-  // Generate a dynamic summary from the article data
-  const generateSummary = () => {
     const sourceCount = article.sourcesCount;
-    const categoryLabel = article.category === 'political' ? 'political' : 'general';
     const biasBreakdown = Object.entries(article.referenceCountByBias)
       .filter(([, count]) => count > 0)
       .map(([bias, count]) => `${count} ${bias}`)
       .join(', ');
 
-    return `This ${categoryLabel} story from ${article.source} is covered by ${sourceCount} source${sourceCount !== 1 ? 's' : ''}. ` +
-      (biasBreakdown
-        ? `The coverage breakdown includes ${biasBreakdown} leaning sources. `
-        : '') +
-      `The overall bias classification for this story is "${article.finalBias}".`;
+    return `This story from ${article.source} is covered by ${sourceCount} source${sourceCount !== 1 ? 's' : ''}. ` +
+      (biasBreakdown ? `The coverage breakdown includes ${biasBreakdown} leaning sources. ` : '') +
+      `The overall bias classification is "${article.finalBias}".`;
   };
 
-  // Compute bias distribution bar segments
+  // Bias distribution bar segments
   const biasSegments = [
     { key: 'left', label: 'Left', value: article.biasScale.left, color: 'var(--bias-left)' },
     { key: 'center', label: 'Center', value: article.biasScale.center, color: 'var(--bias-center)' },
@@ -116,20 +121,21 @@ const Article = () => {
   ].filter(s => s.value > 0);
 
   const categoryDisplay = article.category === 'non_political' ? 'GENERAL' : article.category.toUpperCase();
+  const processedAll = processRawData(classifiedData);
 
   return (
     <div className="app-container article-page">
       <Header
         totalSources={classifiedData?.total_articles || 0}
-        totalStories={574}
+        totalStories={processedAll.length}
       />
 
       {/* Hero Section */}
       <div className="article-hero">
         <div className="article-hero__image-wrapper">
           <img
-            src="/src/assets/hero.png"
-            alt="Article Hero"
+            src={article.imageUrl}
+            alt={article.title}
             className="article-hero__image"
           />
           <div className="article-hero__overlay" />
@@ -146,16 +152,15 @@ const Article = () => {
       </div>
 
       <main className="main-content container article-body">
-        {/* Two-column layout: content + sidebar */}
         <div className="article-layout">
 
           {/* Left: Main content */}
           <div className="article-main">
 
-            {/* AI Summary */}
+            {/* AI Summary — now uses real story_summary */}
             <div className="article-summary">
               <h3 className="article-summary__label">AI Summary</h3>
-              <p className="article-summary__text">{generateSummary()}</p>
+              <p className="article-summary__text">{getArticleSummary()}</p>
             </div>
 
             {/* Coverage Section */}
@@ -184,37 +189,40 @@ const Article = () => {
                       {article.title}
                     </a>
                   </h4>
+                  {article.summary && (
+                    <p className="coverage-item__summary">{article.summary}</p>
+                  )}
                 </div>
               </div>
 
-              {/* References */}
+              {/* Related Reports — real titles, bias, and time */}
               {article.references.length > 0 ? (
-                article.references.map((ref, i) => {
-                  const refBias = getRefBias(i);
-                  return (
-                    <div key={i} className="coverage-item coverage-item--bordered">
-                      <div className="coverage-item__icon">
-                        {getSourceInitial(ref.source)}
-                      </div>
-                      <div className="coverage-item__body">
-                        <div className="coverage-item__header">
-                          <span className="coverage-item__source">{ref.source}</span>
-                          <span className={`coverage-item__bias-tag ${getBiasColor(refBias)}`}>
-                            {refBias.toUpperCase()}
-                          </span>
-                          <span className="coverage-item__time">
-                            {getRandomTimeAgo((article.id * 7) + i + 3)}
-                          </span>
-                        </div>
-                        <h4 className="coverage-item__title">
-                          <a href={ref.url} target="_blank" rel="noopener noreferrer">
-                            {extractTitleFromUrl(ref.url)}
-                          </a>
-                        </h4>
-                      </div>
+                article.references.map((ref, i) => (
+                  <div key={i} className="coverage-item coverage-item--bordered">
+                    <div className="coverage-item__icon">
+                      {getSourceInitial(ref.source)}
                     </div>
-                  );
-                })
+                    <div className="coverage-item__body">
+                      <div className="coverage-item__header">
+                        <span className="coverage-item__source">{ref.source}</span>
+                        <span className={`coverage-item__bias-tag ${getBiasColor(ref.bias)}`}>
+                          {ref.bias.toUpperCase()}
+                        </span>
+                        <span className="coverage-item__time">
+                          {ref.timeAgo}
+                        </span>
+                      </div>
+                      <h4 className="coverage-item__title">
+                        <a href={ref.url} target="_blank" rel="noopener noreferrer">
+                          {ref.title}
+                        </a>
+                      </h4>
+                      {ref.summary && (
+                        <p className="coverage-item__summary">{ref.summary}</p>
+                      )}
+                    </div>
+                  </div>
+                ))
               ) : (
                 <div className="coverage-empty">No alternative coverages available for this story.</div>
               )}
@@ -294,7 +302,7 @@ const Article = () => {
                 <Link to={`/article/${story.id}`} key={story.id} className="related-card">
                   <div className="related-card__image-wrapper">
                     <img
-                      src="/src/assets/hero.png"
+                      src={story.imageUrl}
                       alt={story.title}
                       className="related-card__image"
                     />
