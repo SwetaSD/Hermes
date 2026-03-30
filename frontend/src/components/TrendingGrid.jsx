@@ -25,7 +25,7 @@ const TrendingGrid = ({ stories }) => {
               <img
                 src={story.imageUrl}
                 alt={story.title}
-                className="trending-image grayscale contrast-125"
+                className="trending-image"
                 onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=80&w=600'; }}
               />
             </div>

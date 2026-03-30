@@ -17,7 +17,7 @@ const FeaturedStory = ({ story }) => {
         <img
           src={story.imageUrl}
           alt={story.title}
-          className="featured-image grayscale"
+          className="featured-image"
           onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1504711434969-e33886168d5c?auto=format&fit=crop&q=80&w=1200'; }}
         />
       </div>
