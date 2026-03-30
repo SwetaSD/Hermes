@@ -1,9 +1,11 @@
 import json
 import os
+import requests
+from bs4 import BeautifulSoup
 from sentence_transformers import SentenceTransformer, util
 
 # ==================================================
-# PATHS (FIXED)
+# PATHS
 # ==================================================
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -19,7 +21,38 @@ OUTPUT_FILE = os.path.join(DATA_DIR, "classified_news.json")
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 # ==================================================
-# REFERENCE MEANINGS
+# IMAGE EXTRACTOR (STRONG VERSION)
+# ==================================================
+
+def extract_image_url(url):
+    try:
+        headers = {"User-Agent": "Mozilla/5.0"}
+        r = requests.get(url, headers=headers, timeout=10)
+
+        soup = BeautifulSoup(r.text, "html.parser")
+
+        # Open Graph
+        og = soup.find("meta", property="og:image") or soup.find("meta", attrs={"name": "og:image"})
+        if og and og.get("content"):
+            return og["content"]
+
+        # Twitter
+        tw = soup.find("meta", property="twitter:image")
+        if tw and tw.get("content"):
+            return tw["content"]
+
+        # Fallback img
+        img = soup.find("img")
+        if img:
+            return img.get("data-src") or img.get("src")
+
+    except Exception as e:
+        print("Image fetch error:", e)
+
+    return None
+
+# ==================================================
+# REFERENCE TEXTS
 # ==================================================
 
 POLITICAL_TEXTS = [
@@ -72,68 +105,146 @@ def process_event(input_file, output_file):
     with open(input_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    output = []
-    news_counter = 1
+    # ==================================================
+    # MODIFY EXISTING STRUCTURE ONLY (NO REBUILD)
+    # ==================================================
+
+    for item in data.get("results", []):
+
+        combined_text_parts = []
+
+        # ============================
+        # RELATED REPORTS (KEEP IMAGE LOGIC)
+        # ============================
+        reports = item.get("related_reports", [])
+
+        for r in reports:
+
+            title = r.get("title", "")
+            desc = r.get("description", "")
+            url = r.get("url")
+
+            if title:
+                combined_text_parts.append(title)
+
+            if desc:
+                combined_text_parts.append(desc)
+
+            # ✅ YOUR ORIGINAL IMAGE LOGIC (UNCHANGED)
+            image_url = r.get("image_url")
+
+            if not image_url and url:
+                image_url = extract_image_url(url)
+
+            if image_url:
+                r["image_url"] = image_url
+
+        # ============================
+        # INPUT ARTICLE (KEEP IMAGE LOGIC)
+        # ============================
+        main_article = item.get("input_article", {})
+        main_url = main_article.get("url")
+
+        main_image = main_article.get("image_url")
+
+        if not main_image and main_url:
+            main_image = extract_image_url(main_url)
+
+        if main_image:
+            main_article["image_url"] = main_image
+
+        # classification text
+        if main_article.get("title"):
+            combined_text_parts.append(main_article["title"])
+
+        if main_article.get("summary"):
+            combined_text_parts.append(main_article["summary"])
+
+        # ============================
+        # CLASSIFICATION
+        # ============================
+        combined_text = " ".join(combined_text_parts)
+
+        category = classify_news(combined_text)
+
+        # ✅ ADD ONLY NEW FIELD
+        item["category"] = category
+
+    # ==================================================
+    # SAVE SAME JSON STRUCTURE
+    # ==================================================
+
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+    print("[DONE] Structure retained | Image logic preserved")
+    print(f"[OUTPUT] {output_file}")
+
+    if not os.path.exists(input_file):
+        raise FileNotFoundError(f"Input file not found: {input_file}")
+
+    with open(input_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    # ==================================================
+    # LOOP THROUGH EXISTING STRUCTURE (NO REBUILDING)
+    # ==================================================
 
     for item in data.get("results", []):
 
         reports = item.get("related_reports", [])
         combined_text_parts = []
-        source_map = {}
 
-        # ----------------------------
-        # CASE 1: Related reports exist
-        # ----------------------------
-        if reports:
-            for r in reports:
-                title = r.get("title", "")
-                desc = r.get("description", "")
+        # ============================
+        # RELATED REPORTS PROCESSING
+        # ============================
+        for r in reports:
+            title = r.get("title", "")
+            desc = r.get("description", "")
+            url = r.get("url")
 
-                if title:
-                    combined_text_parts.append(title)
-                if desc:
-                    combined_text_parts.append(desc)
+            if title:
+                combined_text_parts.append(title)
+            if desc:
+                combined_text_parts.append(desc)
 
-                source = r.get("source_name", "Unknown")
-                url = r.get("url")
+            # ✅ ADD IMAGE URL IF MISSING
+            if not r.get("image_url") and url:
+                r["image_url"] = extract_image_url(url)
 
-                if source and url and source not in source_map:
-                    source_map[source] = {
-                        "source": source,
-                        "url": url
-                    }
+        # ============================
+        # INPUT ARTICLE PROCESSING
+        # ============================
+        main_article = item.get("input_article", {})
+        main_url = main_article.get("url")
 
-        # ----------------------------
-        # CASE 2: No related reports
-        # ----------------------------
-        else:
-            main = item.get("input_article", {})
-            if main.get("url"):
-                combined_text_parts.append(main.get("url"))
+        if not main_article.get("image_url") and main_url:
+            main_article["image_url"] = extract_image_url(main_url)
 
+        # Include main article text for classification
+        if main_article.get("title"):
+            combined_text_parts.append(main_article["title"])
+
+        if main_article.get("summary"):
+            combined_text_parts.append(main_article["summary"])
+
+        # ============================
+        # CLASSIFICATION
+        # ============================
         combined_text = " ".join(combined_text_parts)
-
         category = classify_news(combined_text)
 
-        news_entry = {
-            "news_id": news_counter,
-            "main_news": {
-                "url": item.get("input_article", {}).get("url", "Unknown"),
-                "source": item.get("input_article", {}).get("source_name", "Unknown")
-            },
-            "category": category
-        }
+        # ✅ ADD CATEGORY TO SAME OBJECT
+        item["category"] = category
 
-        if source_map:
-            news_entry["references"] = list(source_map.values())
-
-        output.append(news_entry)
-        news_counter += 1
+    # ==================================================
+    # SAVE SAME STRUCTURE BACK
+    # ==================================================
 
     with open(output_file, "w", encoding="utf-8") as f:
-        json.dump({"classified_news": output}, f, indent=2, ensure_ascii=False)
+        json.dump(data, f, indent=2, ensure_ascii=False)
 
-    print(f"[DONE] Classified {news_counter - 1} news items")
+    print("[DONE] Structure preserved and enriched")
     print(f"[OUTPUT] {output_file}")
 
 # ==================================================
