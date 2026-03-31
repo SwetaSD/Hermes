@@ -1,42 +1,150 @@
-# Hermes 📰
+# Hermes 📰 - AI Powered News Pipeline
 
-Hermes is a AI Powered News pipeline that aggregates Indian news from RSS sources, finds similar articles, classifies them by publisher bias, and generates structured outputs for analysis.
+Hermes is a comprehensive, AI-powered news pipeline and web application that aggregates Indian news from RSS sources, detects similar articles, classifies them by publisher bias, and generates structured output for deep analysis. 
 
----
-
-##  Project Overview
-
-Hermes follows a multi-stage news processing pipeline:
-
-1. Fetch RSS news sources
-2. Extract raw news
-3. Detect similar articles
-4. Classify news
-5. Apply LCR (Left-Center-Right) classification
-6. Generate final structured results
+The primary goal of Hermes is to visualize news coverage across the political spectrum (Left-Center-Right) through an interactive **Media Bias Map**, allowing readers to see how different stories are framed by different publishers.
 
 ---
 
-## 📂 Project Flow
+## 🚀 Key Features
 
-rss_sources_indian.py  
-⬇  
-fetch_news_indian.py  
-⬇  
-raw_news_indian.json  
-⬇  
-Fetch_Similar_News.py  
-⬇  
-Similar_Links_Output.json  
-⬇  
-classified_news.py  
-⬇  
-classified_news.json  
-⬇  
-Lcr_classified.py  
-⬇  
-classified_results.json  
+- **Automated News Aggregation:** Fetches real-time news from multiple Indian RSS sources.
+- **Article Deduplication & Similarity:** Groups similar stories from different publishers using NLP (Sentence Transformers).
+- **LCR Bias Classification:** Automatically tags news outlets and specific coverage on a Left-Center-Right spectrum.
+- **Interactive Media Bias Map:** A dynamic React-based frontend mapping the day's stories across political dimensions.
+- **AI Summarization:** Generates intelligent, aggregated summaries of topics using cross-publisher context.
+- **Responsive UI:** Built with Tailwind CSS for a premium, fast, and modern browsing experience (Explore page, Article views).
 
 ---
 
-### To be updated
+## 🛠 Tech Stack
+
+**Frontend**
+- **React (Vite)**: Fast, modern UI development.
+- **Tailwind CSS**: Utility-first styling for premium design aesthetics.
+- **React Router Dom**: Client-side routing.
+- **Lucide React**: Clean, modern iconography.
+
+**Backend & Data Pipeline**
+- **Python & Flask**: API serving and data orchestration.
+- **BeautifulSoup4 & Trafilatura**: Web scraping and raw article text extraction.
+- **spaCy & Sentence-Transformers**: NLP, similarity scoring, and entity evaluation.
+- **scikit-learn**: Data grouping and structuring.
+- **Playwright**: Headless browser automation (when necessary).
+
+---
+
+## 📂 Repository Structure
+
+```text
+Hermes/
+│
+├── frontend/               # React + Tailwind frontend application
+│   ├── src/                # Components, pages (Explore, Article, About, etc.)
+│   ├── package.json        # Frontend dependencies
+│   ├── tailwind.config.cjs # Tailwind configuration & themes
+│   └── vite.config.js      # Vite configuration
+│
+├── project/                # Backend API & ETL Pipeline
+│   ├── start_pipeline/     # The sequential Python data pipeline
+│   │   ├── rss_sources_indian.py
+│   │   ├── fetch_news_indian.py
+│   │   ├── Fetch_Similar_News.py
+│   │   ├── classify_news.py
+│   │   └── LCR_classified.py
+│   ├── data/               # Auto-generated JSON files served to the frontend
+│   ├── app.py              # Flask API server
+│   ├── run_pipeline.py     # Script to execute the pipeline end-to-end
+│   └── requirements.txt    # Python dependencies
+│
+└── README.md               # Project documentation
+```
+
+---
+
+## 🤖 Data Pipeline Flow
+
+The AI pipeline is heavily modularized into 5 distinct stages. Running `run_pipeline.py` executes these stages sequentially:
+
+1. **`rss_sources_indian.py`**  
+   Initializes reading from predefined Indian news RSS feeds.
+2. **`fetch_news_indian.py`**  
+   Scrapes content for the fetched links; outputs `raw_news_indian.json`.
+3. **`Fetch_Similar_News.py`**  
+   Employs Sentence Transformers to group articles covering the same event together; outputs `Similar_Links_Output.json`.
+4. **`classify_news.py`**  
+   Runs analytical classification and summarization on the grouped topics; outputs `classified_news.json`.
+5. **`LCR_classified.py`**  
+   Applies the Left-Center-Right final labels to the processed news structures; outputs `classified_results.json`.
+
+---
+
+## ⚙️ Setup & Installation
+
+### Prerequisites
+- Node.js (v18+)
+- Python (3.9+)
+
+### 1. Backend Setup (Flask & Pipeline)
+
+Navigate to the `project` directory:
+```bash
+cd project
+```
+
+Create a virtual environment:
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+```
+
+Install the required Python dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+*(Optional)* Run the pipeline to regenerate the latest news data:
+```bash
+python run_pipeline.py
+```
+
+Start the Flask server:
+```bash
+python app.py
+```
+*The server will start on `http://127.0.0.1:5000` and serve static JSON data from the `data/` folder.*
+
+### 2. Frontend Setup (React)
+
+Open a new terminal window and navigate to the `frontend` directory:
+```bash
+cd frontend
+```
+
+Install Node modules:
+```bash
+npm install
+```
+
+Start the Vite development server:
+```bash
+npm run dev
+```
+*The React app will be available on `http://localhost:5173`.*
+
+---
+
+## 🌐 API Endpoints
+
+The Flask server is designed to provide fast JSON responses matching the data generated by the offline AI pipeline:
+
+- `GET /results/raw_news` - Returns the initially scraped (raw) articles.
+- `GET /results/similar_links` - Returns article clusters grouped by topic.
+- `GET /results/classified_news` - Returns topic analysis without final bias mapping.
+- `GET /results/final_results` - Returns the final, LCR-mapped JSON structure used directly by the frontend's Map and Explore pages.
+
+---
+
+## 🎓 About the Team
+
+Hermes is proudly developed by an engineering student team from **KIIT University**. Our goal is to leverage artificial intelligence and modern web development to make media bias transparent, providing a balanced, comprehensive perspective on daily news.
