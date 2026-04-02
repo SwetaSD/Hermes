@@ -87,7 +87,7 @@ const STEPS = [
 const STATS = [
   { value: '700+', label: 'SOURCES MONITORED' },
   { value: '500+', label: 'STORIES ANALYZED' },
-  { value: '300', label: 'POLITICAL ARTICLES' },
+  { value: '300+', label: 'POLITICAL ARTICLES' },
   { value: '5', label: 'BIAS CATEGORIES' },
 ];
 
